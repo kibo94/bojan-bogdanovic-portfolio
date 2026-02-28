@@ -88,7 +88,7 @@ nav {
   font-family: "Antonio", sans-serif;
   font-weight: 700;
   font-size: 246px;
-  line-height: 1;
+  line-height: 1.03;
   text-transform: uppercase;
   letter-spacing: -0.03em;
   color: #000;
@@ -655,7 +655,9 @@ p {
     padding: 36px 24px;
     gap: 28px;
   }
-
+.see-project {
+  margin-bottom: 20px;
+}
   .project-row .project-image {
     order: 1;
   }
