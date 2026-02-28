@@ -61,7 +61,9 @@ nav {
 }
 
 /* ─── HERO ─── */
-.hero {
+
+/* HERO v2 (commented out)
+.hero.hero-v2 {
   width: 100%;
   min-height: 100vh;
   background: #fff;
@@ -72,18 +74,15 @@ nav {
   gap: 0px;
   overflow: hidden;
 }
-
 .hero-tag {
   font-family: "Antonio", sans-serif;
   font-size: 24px;
   font-weight: 400;
   color: #000;
 }
-
 .hero-tag strong {
   font-weight: 700;
 }
-
 .hero-heading {
   font-family: "Antonio", sans-serif;
   font-weight: 700;
@@ -94,30 +93,102 @@ nav {
   color: #000;
   margin: 0;
 }
-
 .hero-line-wrap {
   display: block;
   overflow: hidden;
 }
-
 .hero-line {
   display: block;
   animation: heroLineUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-
-/* & Developer slides up first */
-.hero-line-wrap:nth-child(2) .hero-line {
-  animation-delay: 0s;
-}
-
-/* Web Designer slides up second */
-.hero-line-wrap:nth-child(1) .hero-line {
-  animation-delay: 0.18s;
-}
-
+.hero-line-wrap:nth-child(2) .hero-line { animation-delay: 0s; }
+.hero-line-wrap:nth-child(1) .hero-line { animation-delay: 0.18s; }
 @keyframes heroLineUp {
   from { transform: translateY(110%); }
   to   { transform: translateY(0); }
+}
+*/
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ─── MARQUEE ─── */
+.marquee-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-11%);
+  overflow-y: visible;
+  z-index: 4;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 16s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 18vw;
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: #000;
+  white-space: nowrap;
+  letter-spacing: -0.025em;
+  padding-right: 3vw;
+  user-select: none;
+}
+
+.marquee-dot {
+  font-size: 0.45em;
+  vertical-align: middle;
+  line-height: 0;
+  position: relative;
+  top: -0.05em;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── PERSON IMAGE ─── */
+.person {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 95%;
+  width: auto;
+  z-index: 2;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── DESCRIPTION ─── */
+.description {
+  position: absolute;
+  bottom: 44px;
+  right: 44px;
+  z-index: 10;
+  text-align: right;
+  font-family: "Antonio", sans-serif;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: 1.08;
+  color: #000;
 }
 
 /* ─── MY WORK ─── */
@@ -633,12 +704,26 @@ p {
     display: flex;
   }
 
-  .hero {
-    padding: 80px 20px 36px;
+  /* HERO v2 responsive (commented out)
+  .hero.hero-v2 { padding: 80px 20px 36px; }
+  .hero-heading { font-size: clamp(52px, 18vw, 160px); }
+  */
+
+  .description {
+    font-size: 26px;
+    bottom: 24px;
+    right: 20px;
+    left: 20px;
+    text-align: left;
   }
 
-  .hero-heading {
-    font-size: clamp(52px, 18vw, 160px);
+  .person {
+    height: 78%;
+    left: 50%;
+  }
+
+  .marquee-item {
+    font-size: 22vw;
   }
 
   .work {
@@ -656,7 +741,7 @@ p {
     gap: 28px;
   }
 .see-project {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
   .project-row .project-image {
     order: 1;
