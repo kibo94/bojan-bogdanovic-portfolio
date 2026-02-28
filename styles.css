@@ -1,0 +1,819 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  background: #fff;
+}
+
+body {
+  font-family: "Antonio", sans-serif;
+  color: #000;
+  letter-spacing: -0.03em;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 36px;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 42px;
+  list-style: none;
+}
+
+.nav-links a {
+
+  font-size: 19px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.5;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background:#E9E9E9;
+}
+
+/* ─── MARQUEE ─── */
+.marquee-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-11%);
+  overflow-y: visible;
+  z-index: 3;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 16s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 18vw;
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: #000;
+  white-space: nowrap;
+  letter-spacing: -0.025em;
+  padding-right: 3vw;
+  user-select: none;
+}
+
+.marquee-dot {
+  font-size: 0.45em;
+  vertical-align: middle;
+  line-height: 0;
+  position: relative;
+  top: -0.05em;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ─── PERSON IMAGE ─── */
+.person {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 95%;
+  width: auto;
+  z-index: 2;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── DESCRIPTION ─── */
+.description {
+  position: absolute;
+  bottom: 44px;
+  right: 44px;
+  z-index: 10;
+  text-align: right;
+  font-family: "Antonio", sans-serif;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: 1.08;
+  color: #000;
+}
+
+/* ─── MY WORK ─── */
+.work {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 100px 0 80px;
+}
+
+/* ─── SECTION LABELS (shared) ─── */
+.section-label {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: inherit;
+  margin-top: 40px;
+  /* letter-spacing inherits from body: -0.03em */
+}
+
+/* Work: normal flow, side padding, space below */
+.work .section-label {
+  padding-left: 60px;
+  margin-bottom: 80px;
+}
+
+/* About + Testimonials: float label to top-left corner */
+.about .section-label,
+.testimonials .section-label {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  margin-top: 0;
+}
+
+/* Footer: inside flex row, no top margin needed */
+.footer .section-label {
+  margin-top: 0;
+}
+
+.work-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 60px;
+}
+
+.project-row.reverse .project-info {
+  order: 2;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.project-row.reverse .project-image {
+  order: 1;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.project-title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.project-year {
+  font-family: "Antonio", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color:rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.02em;
+}
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-block;
+  font-family: "Antonio", sans-serif;
+
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 40px;
+  border: 1.5px solid transparent;
+  transition: background 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+/* Outlined — light background */
+.btn-outlined {
+  background: transparent;
+  color: #000;
+  border-color: #000;
+}
+
+.btn-outlined:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Primary — light background */
+.btn-primary {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: #000;
+}
+
+/* Primary — dark background */
+.btn-primary-dark {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.btn-primary-dark:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* Context: add top margin when btn sits inside project-info */
+.project-info .btn {
+  margin-top: 24px;
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
+
+.work-footer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 72px;
+  padding: 0 60px;
+}
+
+
+/* ─── ABOUT ─── */
+.about {
+  position: relative;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 8% 100px;
+}
+
+.about-body {
+  width: 711px;
+  margin: 0 auto;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1;
+  font-size: 40px;
+  line-height: 1.3;
+  color: white;
+}
+
+/* Final (dim) color — GSAP animates FROM #fff TO this */
+.letter {
+  display: inline;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+  .about-content {
+    margin: 100px auto;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+
+.animate {
+  color: #d8d8d8;
+
+  font-size: 32px;
+  letter-spacing: -0.05%;
+  line-height: 38px;
+
+}
+
+/* ─── HAMBURGER ─── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  z-index: 200;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ─── MOBILE MENU OVERLAY ─── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 98;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10vw;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu.visible {
+  opacity: 1;
+}
+
+.mobile-menu-link {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: clamp(44px, 12vw, 80px);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: #fff;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease, color 0.2s ease;
+}
+
+.mobile-menu.visible .mobile-menu-link:nth-child(1) { transform: translateY(0); opacity: 1; transition-delay: 0.05s; }
+.mobile-menu.visible .mobile-menu-link:nth-child(2) { transform: translateY(0); opacity: 1; transition-delay: 0.12s; }
+.mobile-menu.visible .mobile-menu-link:nth-child(3) { transform: translateY(0); opacity: 1; transition-delay: 0.19s; }
+
+.mobile-menu-link:hover {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mobile-menu-line {
+  position: absolute;
+  bottom: 48px;
+  left: 10vw;
+  right: 10vw;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.mobile-menu-footer {
+  position: absolute;
+  bottom: 32px;
+  left: 10vw;
+  font-family: "Antonio", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 100px 60px 110px;
+}
+
+
+.testimonials-slider {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  min-height: 220px;
+}
+
+.testimonial {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.testimonial.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+.testimonial-quote {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height:20px;
+
+
+  color: #222;
+  letter-spacing: -0.01em;
+  margin-bottom: 40px;
+  quotes: none;
+}
+
+.testimonial-author {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: #000;
+  line-height: 1;
+}
+
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.testimonial-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease;
+}
+
+.testimonial-dot.active {
+  background: #000;
+}
+
+/* ─── RESPONSIVE: 768px ─── */
+@media (max-width: 768px) {
+  nav {
+    padding: 18px 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .description {
+    font-size: 26px;
+    bottom: 24px;
+    right: 20px;
+    left: 20px;
+    text-align: left;
+  }
+
+  .person {
+    height: 78%;
+    left: 50%;
+  }
+
+  .work {
+    padding: 72px 0 56px;
+  }
+
+  .work .section-label {
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 28px;
+  }
+
+  .project-row.reverse .project-info {
+    order: unset;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .project-row.reverse .project-image {
+    order: unset;
+  }
+
+  .project-title {
+    font-size: clamp(38px, 11vw, 60px);
+  }
+
+  .project-year {
+    font-size: 22px;
+
+
+  }
+
+  .project-image img {
+    max-width: 100%;
+  }
+
+  .work-footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+    margin-top: 48px;
+    gap: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 18px 24px;
+  }
+
+  .project-info .btn {
+    width: auto;
+  }
+
+  .about {
+    padding: 80px 24px 64px;
+  }
+
+  .about .section-label {
+    top: 32px;
+    left: 24px;
+  }
+
+  .about-content {
+    margin: 40px auto;
+    width: 100%;
+  }
+
+  .animate {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about-cta {
+    margin-top: 40px;
+  }
+
+  .about-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 80px 24px 90px;
+  }
+
+  .testimonials .section-label {
+    top: 32px;
+    left: 24px;
+  }
+
+  .testimonial-quote {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .testimonial-author {
+    font-size: 22px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 24px 28px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding-bottom: 28px;
+  }
+
+  .footer-links {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 20px;
+  }
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: black;
+  padding: 44px 60px 32px;
+  color: #fff;
+}
+
+.footer-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 36px;
+}
+
+
+.footer-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.footer-link {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link-email {
+  font-size: 30px;
+}
+
+.footer-link:hover {
+  opacity: 0.45;
+}
+
+.footer-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.footer-link-email svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.footer-privacy {
+  font-family: "Antonio", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  transition: opacity 0.2s ease;
+}
+
+.footer-privacy:hover {
+  opacity: 0.45;
+}
+
+.footer-copy {
+  font-family: "Antonio", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* ─── RESPONSIVE: 480px ─── */
+@media (max-width: 480px) {
+  .description {
+    font-size: 20px;
+  }
+
+  .project-title {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .marquee-item {
+    font-size: 22vw;
+  }
+
+  .about {
+    padding: 70px 20px 56px;
+  }
+
+  .animate {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
