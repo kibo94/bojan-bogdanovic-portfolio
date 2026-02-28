@@ -213,7 +213,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-start;
+
 }
 
 .project-title {
@@ -238,7 +238,8 @@ nav {
 .btn {
   display: inline-block;
   font-family: "Antonio", sans-serif;
-
+  width:200px;
+  text-align: center;
   font-size: 18px;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -543,167 +544,6 @@ p {
   background: #000;
 }
 
-/* ─── RESPONSIVE: 768px ─── */
-@media (max-width: 768px) {
-  nav {
-    padding: 18px 24px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .nav-hamburger {
-    display: flex;
-  }
-
-  .description {
-    font-size: 26px;
-    bottom: 24px;
-    right: 20px;
-    left: 20px;
-    text-align: left;
-  }
-
-  .person {
-    height: 78%;
-    left: 50%;
-  }
-
-  .work {
-    padding: 72px 0 56px;
-  }
-
-  .work .section-label {
-    padding-left: 24px;
-    margin-bottom: 40px;
-  }
-
-  .project-row {
-    grid-template-columns: 1fr;
-    padding: 36px 24px;
-    gap: 28px;
-  }
-
-  .project-row.reverse .project-info {
-    order: unset;
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  .project-row.reverse .project-image {
-    order: unset;
-  }
-
-  .project-title {
-    font-size: clamp(38px, 11vw, 60px);
-  }
-
-  .project-year {
-    font-size: 22px;
-
-
-  }
-
-  .project-image img {
-    max-width: 100%;
-  }
-
-  .work-footer {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 24px;
-    margin-top: 48px;
-    gap: 14px;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 18px 24px;
-  }
-
-  .project-info .btn {
-    width: auto;
-  }
-
-  .about {
-    padding: 80px 24px 64px;
-  }
-
-  .about .section-label {
-    top: 32px;
-    left: 24px;
-  }
-
-  .about-content {
-    margin: 40px auto;
-    width: 100%;
-  }
-
-  .animate {
-    font-size: 20px;
-    line-height: 28px;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .about-cta {
-    margin-top: 40px;
-  }
-
-  .about-cta .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Testimonials */
-  .testimonials {
-    padding: 80px 24px 90px;
-  }
-
-  .testimonials .section-label {
-    top: 32px;
-    left: 24px;
-  }
-
-  .testimonial-quote {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .testimonial-author {
-    font-size: 22px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 40px 24px 28px;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    padding-bottom: 28px;
-  }
-
-  .footer-links {
-    position: static;
-    transform: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding-top: 20px;
-  }
-}
-
 /* ─── FOOTER ─── */
 .footer {
   background: black;
@@ -717,7 +557,6 @@ p {
   align-items: center;
   padding-bottom: 36px;
 }
-
 
 .footer-links {
   position: absolute;
@@ -794,8 +633,165 @@ p {
   color: #fff;
 }
 
+/* ─── RESPONSIVE: 768px ─── */
+@media (max-width: 768px) {
+  nav {
+    padding: 18px 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .description {
+    font-size: 26px;
+    bottom: 24px;
+    right: 20px;
+    left: 20px;
+    text-align: left;
+  }
+
+  .person {
+    height: 78%;
+    left: 50%;
+  }
+
+  .work {
+    padding: 72px 0 56px;
+  }
+
+  .work .section-label {
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 28px;
+  }
+
+  .project-row .project-image {
+    order: 1;
+  }
+
+  .project-row .project-info {
+    order: 2;
+  }
+
+  .project-row.reverse .project-info {
+    text-align: center;
+    align-items: center;
+  }
+
+  .project-title {
+    font-size: clamp(38px, 11vw, 60px);
+  }
+
+  .project-year {
+    font-size: 22px;
+
+
+  }
+
+  .project-image img {
+    max-width: 100%;
+  }
+
+  .work-footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+    margin-top: 48px;
+    gap: 14px;
+  }
+
+  .about {
+    padding: 80px 24px 64px;
+  }
+
+  .about .section-label {
+    top: 32px;
+    left: 24px;
+  }
+
+  .about-content {
+    margin: 40px auto;
+    width: 100%;
+  }
+
+  .animate {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about-cta {
+    margin-top: 40px;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 80px 24px 90px;
+  }
+
+  .testimonials .section-label {
+    top: 32px;
+    left: 24px;
+  }
+
+  .testimonial-quote {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .testimonial-author {
+    font-size: 22px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 24px 28px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 28px;
+  }
+
+  .footer-links {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-link {
+    text-align: center  ;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+  }
+}
+
 /* ─── RESPONSIVE: 480px ─── */
 @media (max-width: 480px) {
+
+  .project-info {
+      align-items: center;
+  }
   .description {
     font-size: 20px;
   }
