@@ -635,6 +635,9 @@ p {
 
 /* ─── RESPONSIVE: 768px ─── */
 @media (max-width: 768px) {
+  .hero {
+    height:95vh;
+  }
   nav {
     padding: 18px 24px;
   }
