@@ -293,13 +293,16 @@ nav {
 
 .project-image {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* push image to right edge */
   align-items: center;
+}
+
+.project-row.reverse .project-image {
+  justify-content: flex-start; /* push image to left edge */
 }
 
 .project-image img {
   width: 100%;
-  max-width: 520px;
   height: auto;
   display: block;
 }
@@ -382,9 +385,13 @@ p {
   display: block;
   width: 28px;
   height: 2px;
-  background: currentColor;
+  background: black;
   transition: transform 0.35s ease, opacity 0.25s ease;
   transform-origin: center;
+}
+
+.nav-hamburger.open span {
+  background: #fff;
 }
 
 .nav-hamburger.open span:nth-child(1) {
