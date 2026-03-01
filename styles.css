@@ -67,6 +67,25 @@ nav {
   opacity: 0.5;
 }
 
+nav {
+  transition: background 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+nav.scrolled .nav-logo,
+nav.scrolled .nav-links a {
+  color: #fff;
+}
+
+nav.scrolled .nav-hamburger span {
+  background: #fff;
+}
+
 /* ─── HERO ─── */
 .hero {
   position: relative;
@@ -638,11 +657,9 @@ p {
     font-size: 22vw;
   }
 
-  .work,
-  .about,
-  .testimonials {
-    padding: 40px 0 64px;
-  }
+.section {
+  padding: 40px 0 100px;
+} 
 
   .footer {
     padding: 40px 0 28px;
@@ -663,8 +680,13 @@ p {
         flex-direction: column;
 
   }
+
+  .work-projects{
+
+    gap: 20px;
+  }
   .see-project {
-    margin-top:40px;
+    margin-top:20px;
   }
   .project-info {
     display: contents;
