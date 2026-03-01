@@ -18,6 +18,17 @@ body {
   letter-spacing: -0.03em;
 }
 
+/* ─── CONTAINER ─── */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section {
+  padding: 40px 0 100px;
+}
+
 /* ─── NAV ─── */
 nav {
   position: fixed;
@@ -34,7 +45,6 @@ nav {
 .nav-logo {
   font-weight: 700;
   font-size: 13px;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
@@ -46,13 +56,10 @@ nav {
 }
 
 .nav-links a {
-
   font-size: 19px;
-  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   color: inherit;
-  letter-spacing: -0.02em;
   transition: opacity 0.2s ease;
 }
 
@@ -61,54 +68,6 @@ nav {
 }
 
 /* ─── HERO ─── */
-
-/* HERO v2 (commented out)
-.hero.hero-v2 {
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
-  padding: 100px 24px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 0px;
-  overflow: hidden;
-}
-.hero-tag {
-  font-family: "Antonio", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  color: #000;
-}
-.hero-tag strong {
-  font-weight: 700;
-}
-.hero-heading {
-  font-family: "Antonio", sans-serif;
-  font-weight: 700;
-  font-size: 246px;
-  line-height: 1.03;
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
-  color: #000;
-  margin: 0;
-}
-.hero-line-wrap {
-  display: block;
-  overflow: hidden;
-}
-.hero-line {
-  display: block;
-  animation: heroLineUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.hero-line-wrap:nth-child(2) .hero-line { animation-delay: 0s; }
-.hero-line-wrap:nth-child(1) .hero-line { animation-delay: 0.18s; }
-@keyframes heroLineUp {
-  from { transform: translateY(110%); }
-  to   { transform: translateY(0); }
-}
-*/
-
 .hero {
   position: relative;
   width: 100%;
@@ -144,7 +103,6 @@ nav {
   text-transform: uppercase;
   color: #000;
   white-space: nowrap;
-  letter-spacing: -0.025em;
   padding-right: 3vw;
   user-select: none;
 }
@@ -174,7 +132,7 @@ nav {
   object-fit: contain;
   object-position: bottom center;
   pointer-events: none;
-  user-select: none;
+
 }
 
 /* ─── DESCRIPTION ─── */
@@ -191,14 +149,6 @@ nav {
   color: #000;
 }
 
-/* ─── MY WORK ─── */
-.work {
-  position: relative;
-  width: 100%;
-  background: #fff;
-  padding: 100px 0 80px;
-}
-
 /* ─── SECTION LABELS (shared) ─── */
 .section-label {
   font-family: "Antonio", sans-serif;
@@ -206,61 +156,49 @@ nav {
   font-size: 13px;
   text-transform: uppercase;
   color: inherit;
-  margin-top: 40px;
-  /* letter-spacing inherits from body: -0.03em */
+  margin-bottom: 60px;
 }
 
-/* Work: normal flow, side padding, space below */
-.work .section-label {
-  padding-left: 60px;
-  margin-bottom: 80px;
-}
-
-/* About + Testimonials: float label to top-left corner */
-.about .section-label,
-.testimonials .section-label {
-  position: absolute;
-  top: 40px;
-  left: 60px;
-  margin-top: 0;
-}
-
-/* Footer: inside flex row, no top margin needed */
-.footer .section-label {
-  margin-top: 0;
+/* ─── MY WORK ─── */
+.work {
+  position: relative;
+  width: 100%;
+  background: #fff;
 }
 
 .work-projects {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .project-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 60px 60px;
+  display: flex;
+  align-items: flex-start;
+  padding: 60px 0;
+}
+
+.project-row > * {
+  flex: 1;
+}
+
+.project-row.reverse {
+  flex-direction: row-reverse;
 }
 
 .project-row.reverse .project-info {
-  order: 2;
   text-align: right;
   align-items: flex-end;
-}
-
-.project-row.reverse .project-image {
-  order: 1;
 }
 
 .project-info {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
 }
+
 .see-project {
   text-decoration: underline;
+  text-transform: uppercase ;
   font-size: 24px;
   margin-top: 80px;
   color: #000;
@@ -272,26 +210,23 @@ nav {
   font-size: 80px;
   line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
   color: #000;
 }
 
 .project-year {
   font-family: "Antonio", sans-serif;
   font-weight: 400;
-  font-size: 30px;
-  color:rgba(0, 0, 0, 0.8);
-  letter-spacing: 0.02em;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* ─── BUTTONS ─── */
 .btn {
   display: inline-block;
   font-family: "Antonio", sans-serif;
-  width:200px;
+  width: 200px;
   text-align: center;
   font-size: 18px;
-  letter-spacing: -0.03em;
   text-transform: uppercase;
   text-decoration: none;
   padding: 16px 40px;
@@ -300,7 +235,6 @@ nav {
   cursor: pointer;
 }
 
-/* Outlined — light background */
 .btn-outlined {
   background: transparent;
   color: #000;
@@ -312,7 +246,6 @@ nav {
   color: #fff;
 }
 
-/* Primary — light background */
 .btn-primary {
   background: #000;
   color: #fff;
@@ -324,7 +257,6 @@ nav {
   color: #000;
 }
 
-/* Primary — dark background */
 .btn-primary-dark {
   background: #fff;
   color: #000;
@@ -336,19 +268,18 @@ nav {
   color: #fff;
 }
 
-/* Context: add top margin when btn sits inside project-info */
 .project-info .btn {
   margin-top: 24px;
 }
 
 .project-image {
   display: flex;
-  justify-content: flex-end; /* push image to right edge */
+  justify-content: flex-end;
   align-items: center;
 }
 
 .project-row.reverse .project-image {
-  justify-content: flex-start; /* push image to left edge */
+  justify-content: flex-start;
 }
 
 .project-image img {
@@ -362,9 +293,7 @@ nav {
   justify-content: center;
   gap: 24px;
   margin-top: 72px;
-  padding: 0 60px;
 }
-
 
 /* ─── ABOUT ─── */
 .about {
@@ -372,26 +301,15 @@ nav {
   width: 100%;
   background: #000;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 120px 8% 100px;
-}
-
-.about-body {
-  width: 711px;
-  margin: 0 auto;
 }
 
 p {
   font-family: "Inter", sans-serif;
-  letter-spacing: -1;
   font-size: 40px;
   line-height: 1.3;
   color: white;
 }
 
-/* Final (dim) color — GSAP animates FROM #fff TO this */
 .letter {
   display: inline;
   color: rgba(255, 255, 255, 0.8);
@@ -402,20 +320,18 @@ p {
   justify-content: center;
   margin-top: 64px;
 }
-  .about-content {
-    margin: 100px auto;
-    max-width: 800px;
-    width: 100%;
-    text-align: center;
-  }
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
 
 .animate {
   color: #d8d8d8;
-
   font-size: 32px;
-  letter-spacing: -0.05%;
   line-height: 38px;
-
 }
 
 /* ─── HAMBURGER ─── */
@@ -487,7 +403,6 @@ p {
   font-size: clamp(44px, 12vw, 80px);
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
   text-decoration: none;
   color: #fff;
   transform: translateY(20px);
@@ -518,7 +433,6 @@ p {
   left: 10vw;
   font-family: "Antonio", sans-serif;
   font-size: 11px;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
 }
@@ -528,9 +442,7 @@ p {
   position: relative;
   width: 100%;
   background: #fff;
-  padding: 100px 60px 110px;
 }
-
 
 .testimonials-slider {
   position: relative;
@@ -561,11 +473,8 @@ p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height:20px;
-
-
+  line-height: 20px;
   color: #222;
-  letter-spacing: -0.01em;
   margin-bottom: 40px;
   quotes: none;
 }
@@ -574,7 +483,6 @@ p {
   font-family: "Antonio", sans-serif;
   font-weight: 700;
   font-size: 28px;
-  letter-spacing: -0.02em;
   color: #000;
   line-height: 1;
 }
@@ -604,7 +512,7 @@ p {
 /* ─── FOOTER ─── */
 .footer {
   background: black;
-  padding: 44px 60px 32px;
+  padding: 48px 0 32px;
   color: #fff;
 }
 
@@ -628,7 +536,6 @@ p {
   font-family: "Antonio", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  letter-spacing: -0.02em;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
@@ -671,7 +578,6 @@ p {
 .footer-privacy {
   font-family: "Antonio", sans-serif;
   font-size: 12px;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
@@ -685,13 +591,16 @@ p {
 .footer-copy {
   font-family: "Antonio", sans-serif;
   font-size: 12px;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
 }
 
 /* ─── RESPONSIVE: 768px ─── */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
   nav {
     padding: 18px 24px;
   }
@@ -704,56 +613,80 @@ p {
     display: flex;
   }
 
-  /* HERO v2 responsive (commented out)
-  .hero.hero-v2 { padding: 80px 20px 36px; }
-  .hero-heading { font-size: clamp(52px, 18vw, 160px); }
-  */
-
   .description {
     font-size: 26px;
-    bottom: calc(24px + env(safe-area-inset-bottom));
-    right: 20px;
+    top: 75px;
     left: 20px;
+    bottom: auto;
+    right: auto;
     text-align: left;
   }
 
   .person {
-    height: 78%;
+    height: 74%;
     left: 50%;
+  }
+
+  .marquee-wrapper {
+    top: auto;
+    bottom: 25%;
+    transform: none;
+    height: auto;
   }
 
   .marquee-item {
     font-size: 22vw;
   }
 
-  .work {
-    padding: 72px 0 56px;
+  .work,
+  .about,
+  .testimonials {
+    padding: 40px 0 64px;
   }
 
-  .work .section-label {
-    padding-left: 24px;
-    margin-bottom: 40px;
+  .footer {
+    padding: 40px 0 28px;
+  }
+
+  .section-label {
+    margin-bottom: 32px;
   }
 
   .project-row {
-    grid-template-columns: 1fr;
-    padding: 36px 24px;
-    gap: 28px;
-  }
-.see-project {
-  margin-top: 20px;
-}
-  .project-row .project-image {
-    order: 1;
-  }
-
-  .project-row .project-info {
-    order: 2;
-  }
-
-  .project-row.reverse .project-info {
-    text-align: center;
+    flex-direction: column;
     align-items: center;
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .project-row.reverse{
+        flex-direction: column;
+
+  }
+  .see-project {
+    margin-top:40px;
+  }
+  .project-info {
+    display: contents;
+  }
+
+  .project-title {
+    order: 1;
+    text-align: center;
+  }
+
+  .project-year {
+    order: 2;
+    text-align: center;
+  }
+
+  .project-image {
+    order: 3;
+    width: 100%;
+  }
+
+  .see-project {
+    order: 4;
   }
 
   .project-title {
@@ -762,8 +695,6 @@ p {
 
   .project-year {
     font-size: 22px;
-
-
   }
 
   .project-image img {
@@ -773,22 +704,11 @@ p {
   .work-footer {
     flex-direction: column;
     align-items: center;
-    padding: 0 24px;
     margin-top: 48px;
     gap: 14px;
   }
 
-  .about {
-    padding: 80px 24px 64px;
-  }
-
-  .about .section-label {
-    top: 32px;
-    left: 24px;
-  }
-
   .about-content {
-    margin: 40px auto;
     width: 100%;
   }
 
@@ -796,21 +716,10 @@ p {
     font-size: 20px;
     line-height: 28px;
     text-align: center;
-    max-width: 100%;
   }
 
   .about-cta {
     margin-top: 40px;
-  }
-
-  /* Testimonials */
-  .testimonials {
-    padding: 80px 24px 90px;
-  }
-
-  .testimonials .section-label {
-    top: 32px;
-    left: 24px;
   }
 
   .testimonial-quote {
@@ -822,9 +731,8 @@ p {
     font-size: 22px;
   }
 
-  /* Footer */
-  .footer {
-    padding: 40px 24px 28px;
+  .footer .section-label {
+    align-self: flex-start;
   }
 
   .footer-top {
@@ -839,11 +747,11 @@ p {
     transform: none;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 20px;
   }
+
   .footer-link {
-    text-align: center  ;
+    text-align: center;
   }
 
   .footer-bottom {
@@ -856,20 +764,57 @@ p {
 
 /* ─── RESPONSIVE: 480px ─── */
 @media (max-width: 480px) {
-
-  .project-info {
-      align-items: center;
-  }
   .project-title {
     font-size: clamp(32px, 10vw, 48px);
-  }
-
-  .about {
-    padding: 70px 20px 56px;
   }
 
   .animate {
     font-size: 17px;
     line-height: 25px;
   }
+}
+
+/* ─── LOADER ─── */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.loader-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: #fff;
+}
+
+.loader-count {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  font-size: clamp(80px, 20vw, 200px);
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+/* Sections hidden until loader exits */
+.hero, .work, .about, .testimonials, footer {
+  opacity: 0;
+}
+
+/* Testimonials drag cursor */
+.testimonials-slider {
+  cursor: grab;
+}
+
+.testimonials-slider:active {
+  cursor: grabbing;
 }

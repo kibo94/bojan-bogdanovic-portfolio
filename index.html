@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Bojan Bogdanović</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +16,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div id="loader">
+      <div class="loader-bar"></div>
+      <div class="loader-count"><span id="loader-num">0</span>%</div>
+    </div>
+
     <nav id="main-nav">
       <div class="nav-logo" id="nav-logo">Bojan Bogdanović</div>
       <ul class="nav-links" id="nav-links">
@@ -55,10 +64,22 @@
     <section class="hero">
       <div class="marquee-wrapper">
         <div class="marquee-track">
-          <span class="marquee-item">BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ &nbsp;&nbsp;&nbsp;</span>
-          <span class="marquee-item">BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ &nbsp;&nbsp;&nbsp;</span>
-          <span class="marquee-item">BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ &nbsp;&nbsp;&nbsp;</span>
-          <span class="marquee-item">BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ &nbsp;&nbsp;&nbsp;</span>
+          <span class="marquee-item"
+            >BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ
+            &nbsp;&nbsp;&nbsp;</span
+          >
+          <span class="marquee-item"
+            >BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ
+            &nbsp;&nbsp;&nbsp;</span
+          >
+          <span class="marquee-item"
+            >BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ
+            &nbsp;&nbsp;&nbsp;</span
+          >
+          <span class="marquee-item"
+            >BOJAN <span class="marquee-dot">&#x25CF;</span> BOGDANOVIĆ
+            &nbsp;&nbsp;&nbsp;</span
+          >
         </div>
       </div>
 
@@ -67,149 +88,157 @@
       <div class="description">Frontend developer &amp;<br />Web Designer</div>
     </section>
 
-    <section class="work" id="work">
-      <div class="section-label">// Projects</div>
+    <section class="work section" id="work">
+      <div class="container">
+        <div class="section-label">// Projects</div>
 
-      <div class="work-projects">
-        <!-- FIĆA -->
-        <div class="project-row">
-          <div class="project-info">
-            <div class="project-title">Fića</div>
-            <div class="project-year">2025</div>
-            <a href="#" class="see-project">See Project</a>
+        <div class="work-projects">
+          <!-- FIĆA -->
+          <div class="project-row">
+            <div class="project-info">
+              <div class="project-title">Fića</div>
+              <div class="project-year">2025</div>
+              <a href="#" class="see-project">See Project</a>
+            </div>
+            <div class="project-image">
+              <img src="fica.png" alt="Fića Project" />
+            </div>
           </div>
-          <div class="project-image">
-            <img src="fica.png" alt="Fića Project" />
+
+          <!-- NETWORX GRIDD -->
+          <div class="project-row reverse">
+            <div class="project-info">
+              <div class="project-title">Networx Gridd</div>
+              <div class="project-year">2025</div>
+              <a href="#" class="see-project">See Project</a>
+            </div>
+            <div class="project-image">
+              <img src="networx.png" alt="Networx Gridd Project" />
+            </div>
+          </div>
+
+          <!-- REAL TIME TRAFFIC -->
+          <div class="project-row">
+            <div class="project-info">
+              <div class="project-title">Real Time Traffic</div>
+              <div class="project-year">2025</div>
+              <a href="#" class="see-project">See Project</a>
+            </div>
+            <div class="project-image">
+              <img src="rtt.png" alt="Real Time Traffic Project" />
+            </div>
           </div>
         </div>
 
-        <!-- NETWORX GRIDD -->
-        <div class="project-row reverse">
-          <div class="project-info">
-            <div class="project-title">Networx Gridd</div>
-            <div class="project-year">2025</div>
-            <a href="#" class="see-project">See Project</a>
-          </div>
-          <div class="project-image">
-            <img src="networx.png" alt="Networx Gridd Project" />
-          </div>
-        </div>
-
-        <!-- REAL TIME TRAFFIC -->
-        <div class="project-row">
-          <div class="project-info">
-            <div class="project-title">Real Time Traffic</div>
-            <div class="project-year">2025</div>
-            <a href="#" class="see-project">See Project</a>
-          </div>
-          <div class="project-image">
-            <img src="rtt.png" alt="Real Time Traffic Project" />
-          </div>
-        </div>
-      </div>
-
-      <div class="work-footer">
-        <a href="#" class="btn btn-primary">See More Work</a>
-        <a href="#" class="btn btn-outlined">Contact Me</a>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="section-label">// About Me</div>
-      <div class="about-content">
-        <p class="animate">
-          My name is Bojan Bogdanovic, I'm 31 years old and based in Čačak,
-          Serbia. I consider myself a hardworking and dedicated person, guided
-          by faith and always ready to bring a bit of humor into any moment
-        </p>
-        <div class="about-cta">
-          <a href="#" class="btn btn-primary-dark">More About Me</a>
+        <div class="work-footer">
+          <a href="#" class="btn btn-primary">See More Work</a>
+          <a href="#" class="btn btn-outlined">Contact Me</a>
         </div>
       </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
-      <div class="section-label">// Testimonials</div>
-
-      <div class="testimonials-slider" id="testimonials-slider">
-        <div class="testimonial active">
-          <p class="testimonial-quote">
-            I had the pleasure of working with Bojan on several projects, and I
-            can confidently say that he is an exceptional front-end developer.
-            Bojan's expertise spans across a wide range of technologies and
-            platforms, including web systems and mobile applications, where his
-            contributions were consistently innovative and impactful. He brings
-            a deep understanding of modern front-end development frameworks,
-            always delivering clean, efficient, and scalable code. Beyond his
-            technical skills, Bojan has an impressive ability to communicate
-            complex ideas clearly, work effectively within teams, and adapt
-            quickly to evolving project requirements.
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-label">// About Me</div>
+        <div class="about-content">
+          <p class="animate">
+            My name is Bojan Bogdanovic, I'm 31 years old and based in Čačak,
+            Serbia. I consider myself a hardworking and dedicated person, guided
+            by faith and always ready to bring a bit of humor into any moment
           </p>
-          <div class="testimonial-author">Dejan Krunić</div>
-        </div>
-
-        <div class="testimonial">
-          <p class="testimonial-quote">
-            Working with Bojan was a seamless experience from start to finish.
-            He took our vision and transformed it into a polished, performant
-            product that exceeded expectations. His attention to detail and
-            commitment to quality are second to none — exactly the kind of
-            developer you want on your team.
-          </p>
-          <div class="testimonial-author">Marija Petrović</div>
+          <div class="about-cta">
+            <a href="#" class="btn btn-primary-dark">More About Me</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="testimonials-dots" id="testimonials-dots"></div>
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section-label">// Testimonials</div>
+        <div class="testimonials-slider" id="testimonials-slider">
+          <div class="testimonial active">
+            <p class="testimonial-quote">
+              I had the pleasure of working with Bojan on several projects, and
+              I can confidently say that he is an exceptional front-end
+              developer. Bojan's expertise spans across a wide range of
+              technologies and platforms, including web systems and mobile
+              applications, where his contributions were consistently innovative
+              and impactful. He brings a deep understanding of modern front-end
+              development frameworks, always delivering clean, efficient, and
+              scalable code. Beyond his technical skills, Bojan has an
+              impressive ability to communicate complex ideas clearly, work
+              effectively within teams, and adapt quickly to evolving project
+              requirements.
+            </p>
+            <div class="testimonial-author">Dejan Krunić</div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-quote">
+              Working with Bojan was a seamless experience from start to finish.
+              He took our vision and transformed it into a polished, performant
+              product that exceeded expectations. His attention to detail and
+              commitment to quality are second to none — exactly the kind of
+              developer you want on your team.
+            </p>
+            <div class="testimonial-author">Marija Petrović</div>
+          </div>
+        </div>
+
+        <div class="testimonials-dots" id="testimonials-dots"></div>
+      </div>
     </section>
 
     <footer class="footer">
-      <div class="footer-top">
-        <div class="section-label">// Contact Us</div>
-        <div class="footer-links">
-          <a
-            href="mailto:bojan@example.com"
-            class="footer-link footer-link-email"
-          >
-            Email
-            <svg
-              viewBox="0 0 14 14"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
+      <div class="container">
+        <div class="footer-top">
+          <div class="section-label">// Contact Us</div>
+          <div class="footer-links">
+            <a
+              href="mailto:bojan@example.com"
+              class="footer-link footer-link-email"
             >
-              <path d="M2 12L12 2M12 2H5M12 2v7" />
-            </svg>
-          </a>
-          <a href="#" class="footer-link">
-            Instagram
-            <svg
-              viewBox="0 0 14 14"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path d="M2 12L12 2M12 2H5M12 2v7" />
-            </svg>
-          </a>
-          <a href="#" class="footer-link">
-            Tiktok
-            <svg
-              viewBox="0 0 14 14"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path d="M2 12L12 2M12 2H5M12 2v7" />
-            </svg>
-          </a>
+              Email
+              <svg
+                viewBox="0 0 14 14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M2 12L12 2M12 2H5M12 2v7" />
+              </svg>
+            </a>
+            <a href="#" class="footer-link">
+              Instagram
+              <svg
+                viewBox="0 0 14 14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M2 12L12 2M12 2H5M12 2v7" />
+              </svg>
+            </a>
+            <a href="#" class="footer-link">
+              Tiktok
+              <svg
+                viewBox="0 0 14 14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M2 12L12 2M12 2H5M12 2v7" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <a href="#" class="footer-privacy">Privacy</a>
-        <span class="footer-copy"
-          >Copyright &copy; Bojan Bogdanović &mdash; 2025</span
-        >
+        <div class="footer-bottom">
+          <a href="#" class="footer-privacy">Privacy</a>
+          <span class="footer-copy"
+            >Copyright &copy; Bojan Bogdanović &mdash; 2025</span
+          >
+        </div>
       </div>
     </footer>
 
