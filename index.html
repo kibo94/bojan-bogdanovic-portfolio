@@ -166,32 +166,47 @@
     <section class="testimonials section" id="testimonials">
       <div class="container">
         <div class="section-label">// Testimonials</div>
-        <div class="testimonials-grid">
+        <div class="t-slider-viewport">
+          <div class="testimonials-grid" id="t-track">
 
-          <div class="t-card t-card--light">
-            <span class="t-mark">&ldquo;</span>
-            <p class="t-text">I had the pleasure of working with Bojan on several projects — he is an exceptional front-end developer. His expertise across web and mobile platforms is consistently innovative, and he always delivers clean, scalable code. Beyond his technical skills, he communicates clearly and adapts quickly to any challenge.</p>
-            <div class="t-author">Dejan Krunić</div>
+            <div class="t-card t-card--light">
+              <span class="t-mark">&ldquo;</span>
+              <p class="t-text">I had the pleasure of working with Bojan on several projects — he is an exceptional front-end developer. His expertise across web and mobile platforms is consistently innovative, and he always delivers clean, scalable code. Beyond his technical skills, he communicates clearly and adapts quickly to any challenge.</p>
+              <div class="t-author">Dejan Krunić</div>
+            </div>
+
+            <div class="t-card t-card--dark">
+              <span class="t-mark">&ldquo;</span>
+              <p class="t-text">Working with Bojan was a seamless experience from start to finish. He took our vision and transformed it into a polished, performant product that exceeded expectations. His attention to detail and commitment to quality are second to none — exactly the kind of developer you want on your team.</p>
+              <div class="t-author">Marija Petrović</div>
+            </div>
+
+            <div class="t-card t-card--light">
+              <span class="t-mark">&ldquo;</span>
+              <p class="t-text">Bojan brought both technical depth and creative thinking to every task. He understood our goals from day one and consistently delivered beyond what was asked. A rare combination of skill, reliability, and positive energy on every project.</p>
+              <div class="t-author">Stefan Nikolić</div>
+            </div>
+
+            <div class="t-card t-card--dark">
+              <span class="t-mark">&ldquo;</span>
+              <p class="t-text">Bojan's ability to turn complex requirements into elegant, user-friendly interfaces is impressive. He works with precision and speed, and his eye for design details makes every project stand out. Highly recommended.</p>
+              <div class="t-author">Ana Jovanović</div>
+            </div>
+
           </div>
 
-          <div class="t-card t-card--dark">
-            <span class="t-mark">&ldquo;</span>
-            <p class="t-text">Working with Bojan was a seamless experience from start to finish. He took our vision and transformed it into a polished, performant product that exceeded expectations. His attention to detail and commitment to quality are second to none — exactly the kind of developer you want on your team.</p>
-            <div class="t-author">Marija Petrović</div>
+          <div class="t-nav">
+            <button class="t-btn t-prev" aria-label="Previous testimonial">
+              <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg)">
+                <path d="M18.3941 28.0477C18.1986 27.8429 18.0889 27.5653 18.0889 27.2759C18.0889 26.9865 18.1986 26.7089 18.3941 26.5042L29.1343 15.2625L1.04269 15.2625C0.765913 15.2625 0.500471 15.1475 0.30476 14.9427C0.109049 14.7378 -0.000899149 14.4601 -0.000899137 14.1704C-0.000899125 13.8808 0.109049 13.603 0.30476 13.3982C0.500471 13.1933 0.765913 13.0783 1.04269 13.0783L29.1343 13.0783L18.3941 1.83665C18.2097 1.62962 18.1094 1.3558 18.1141 1.07286C18.1189 0.789925 18.2284 0.519972 18.4196 0.319876C18.6109 0.119779 18.8688 0.00516158 19.1392 0.000169529C19.4095 -0.00482252 19.6712 0.100201 19.869 0.293114L32.3921 13.3986C32.5875 13.6034 32.6973 13.881 32.6973 14.1704C32.6973 14.4598 32.5875 14.7374 32.3921 14.9422L19.869 28.0477C19.6733 28.2522 19.4081 28.3671 19.1315 28.3671C18.855 28.3671 18.5897 28.2522 18.3941 28.0477Z" fill="black"/>
+              </svg>
+            </button>
+            <button class="t-btn t-next" aria-label="Next testimonial">
+              <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.3941 28.0477C18.1986 27.8429 18.0889 27.5653 18.0889 27.2759C18.0889 26.9865 18.1986 26.7089 18.3941 26.5042L29.1343 15.2625L1.04269 15.2625C0.765913 15.2625 0.500471 15.1475 0.30476 14.9427C0.109049 14.7378 -0.000899149 14.4601 -0.000899137 14.1704C-0.000899125 13.8808 0.109049 13.603 0.30476 13.3982C0.500471 13.1933 0.765913 13.0783 1.04269 13.0783L29.1343 13.0783L18.3941 1.83665C18.2097 1.62962 18.1094 1.3558 18.1141 1.07286C18.1189 0.789925 18.2284 0.519972 18.4196 0.319876C18.6109 0.119779 18.8688 0.00516158 19.1392 0.000169529C19.4095 -0.00482252 19.6712 0.100201 19.869 0.293114L32.3921 13.3986C32.5875 13.6034 32.6973 13.881 32.6973 14.1704C32.6973 14.4598 32.5875 14.7374 32.3921 14.9422L19.869 28.0477C19.6733 28.2522 19.4081 28.3671 19.1315 28.3671C18.855 28.3671 18.5897 28.2522 18.3941 28.0477Z" fill="black"/>
+              </svg>
+            </button>
           </div>
-
-          <div class="t-card t-card--light">
-            <span class="t-mark">&ldquo;</span>
-            <p class="t-text">Bojan brought both technical depth and creative thinking to every task. He understood our goals from day one and consistently delivered beyond what was asked. A rare combination of skill, reliability, and positive energy on every project.</p>
-            <div class="t-author">Stefan Nikolić</div>
-          </div>
-
-          <div class="t-card t-card--dark">
-            <span class="t-mark">&ldquo;</span>
-            <p class="t-text">Bojan's ability to turn complex requirements into elegant, user-friendly interfaces is impressive. He works with precision and speed, and his eye for design details makes every project stand out. Highly recommended.</p>
-            <div class="t-author">Ana Jovanović</div>
-          </div>
-
         </div>
       </div>
     </section>

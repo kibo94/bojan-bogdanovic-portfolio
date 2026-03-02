@@ -191,7 +191,7 @@ nav.scrolled .nav-hamburger span {
 .section-label {
   font-family: "Antonio", sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size:20px;
   text-transform: uppercase;
   color: inherit;
   margin-bottom: 60px;
@@ -371,8 +371,10 @@ p {
 
 .animate {
   color: white;
-  font-size: 32px;
-  line-height: 38px;
+  letter-spacing: 0;
+  font-size: 50px;
+  line-height: 52px;
+  text-align: left;
 }
 
 /* ─── HAMBURGER ─── */
@@ -483,19 +485,29 @@ p {
   position: relative;
   width: 100%;
   background: #fff;
+  padding:140px 0px;
+}
+
+.t-slider-viewport {
+  margin-top: 0px;
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: 54% 46%;
   gap: 10px;
-  margin-top: 80px;
+}
+
+/* nav hidden on desktop */
+.t-nav {
+  display: none;
 }
 
 .t-card {
   display: flex;
   flex-direction: column;
-  padding: 48px 44px 44px;
+  padding: 40px;
+  width: 100%;
 }
 
 .t-card--light {
@@ -518,7 +530,7 @@ p {
   font-family: "Antonio", sans-serif;
   font-size: 80px;
   line-height: 0.9;
-  margin-bottom: 28px;
+  margin-bottom: 0px;
   display: block;
 }
 
@@ -528,6 +540,7 @@ p {
   line-height: 1.65;
   flex: 1;
   margin-bottom: 48px;
+width: 100%;
 }
 
 .t-author {
@@ -663,8 +676,8 @@ p {
 
   nav {
     padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .nav-links {
@@ -716,6 +729,8 @@ p {
 
   .section-label {
     margin-bottom: 32px;
+
+
   }
 
   .project-row {
@@ -794,24 +809,76 @@ p {
     margin-top: 40px;
   }
 
+  /* ── Mobile Testimonials Slider ── */
+  .t-slider-viewport {
+    overflow: hidden;
+    
+  }
+.testimonials {
+padding-top: 104px;
+padding-bottom: 52px;
+}
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .t-card {
-    padding: 36px 28px 32px;
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 40px 20px;
+    text-align: left;
+  }
+
+  .t-card--dark .t-mark,
+  .t-card--dark .t-text,
+  .t-card--dark .t-author {
+    color: #fff;
   }
 
   .t-mark {
-    font-size: 60px;
+    font-size: 56px;
   }
 
   .t-text {
     font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 100%;
   }
 
   .t-author {
-    font-size: 20px;
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+
+  .t-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+    padding: 24px 0 0;
+  }
+
+  .t-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #000;
+    line-height: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .t-btn:hover {
+    opacity: 1;
+  }
+
+  .t-btn svg {
+    width: 48px;
+    height: 16px;
   }
 
   .footer-heading {
@@ -855,6 +922,152 @@ p {
   .animate {
     font-size: 17px;
     line-height: 25px;
+  }
+}
+
+/* ─── RESPONSIVE: 1280px ─── */
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 60px;
+  }
+
+  .section {
+    padding: 60px 0 120px;
+  }
+
+  .section-label {
+    top: 60px;
+  }
+
+  .about {
+    padding: 240px 0;
+  }
+
+  .testimonials {
+    padding: 120px 0;
+  }
+
+  .project-title {
+    font-size: 90px;
+  }
+
+  .animate {
+    font-size: 54px;
+    line-height: 60px;
+  }
+
+  .footer-heading {
+    font-size: 160px;
+  }
+
+  .footer {
+    padding-top: 60px;
+  }
+}
+
+/* ─── RESPONSIVE: 1440px ─── */
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 80px;
+  }
+
+  .section {
+    padding: 80px 0 140px;
+  }
+
+  .section-label {
+    top: 80px;
+  }
+
+  .about {
+    padding: 300px 0;
+  }
+
+  .testimonials {
+    padding: 160px 0;
+  }
+
+  .project-title {
+    font-size: 100px;
+  }
+
+  .animate {
+    font-size: 60px;
+    line-height: 68px;
+  }
+
+  .footer-heading {
+    font-size: 190px;
+  }
+
+  .footer {
+    padding-top: 80px;
+  }
+}
+
+/* ─── RESPONSIVE: 1920px ─── */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+    padding: 0 120px;
+  }
+
+  .section {
+    padding: 100px 0 180px;
+  }
+
+  .section-label {
+    top: 100px;
+    font-size: 22px;
+  }
+
+  .about {
+    padding: 400px 0;
+  }
+
+  .testimonials {
+    padding: 200px 0;
+  }
+
+  .project-row {
+    padding: 80px 0;
+  }
+
+  .project-title {
+    font-size: 130px;
+  }
+
+  .project-year {
+    font-size: 22px;
+  }
+
+  .animate {
+    font-size: 72px;
+    line-height: 82px;
+  }
+
+  .t-text {
+    font-size: 20px;
+  }
+
+  .t-author {
+    font-size: 28px;
+  }
+
+  .footer-heading {
+    font-size: 240px;
+  }
+
+  .footer {
+    padding-top: 100px;
+  }
+
+  .footer-links {
+    margin-bottom: 100px;
+  }
+
+  nav {
+    padding: 28px 40px;
   }
 }
 

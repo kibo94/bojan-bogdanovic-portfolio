@@ -90,6 +90,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // ── Testimonials Mobile Carousel ──
+  const tTrack = document.getElementById("t-track");
+  const tCards = document.querySelectorAll(".t-card");
+  const tPrev  = document.querySelector(".t-prev");
+  const tNext  = document.querySelector(".t-next");
+  let   tIdx   = 0;
+
+  function tSlideTo(idx) {
+    tIdx = ((idx % tCards.length) + tCards.length) % tCards.length;
+    const cardW = tCards[0].offsetWidth;
+    tTrack.style.transform = `translateX(-${tIdx * cardW}px)`;
+  }
+
+  tPrev.addEventListener("click", () => tSlideTo(tIdx - 1));
+  tNext.addEventListener("click", () => tSlideTo(tIdx + 1));
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      tTrack.style.transform = "";
+    } else {
+      // re-snap to current card after resize
+      tSlideTo(tIdx);
+    }
+  }, { passive: true });
+
   // ── GSAP Scroll Text Animation ──
   const textElements = document.querySelectorAll(".animate");
   textElements.forEach((textElement) => {
@@ -103,13 +128,13 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(chars, {
       scrollTrigger: {
         trigger: textElement,
-        start: "top 85%",
-        end: "bottom 20%",
-        scrub: true,
+        start: "top 80%",
+        end: "bottom 40%",
+        scrub: 1.5,
       },
       color: "#B1AFAF",
-      stagger: 1,
-      duration: 1,
+      stagger: 0.05,
+      ease: "none",
     });
   });
 });
