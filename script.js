@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const loaderEl    = document.getElementById("loader");
+  const loaderEl = document.getElementById("loader");
   const loaderNumEl = document.getElementById("loader-num");
   const loaderBarEl = document.querySelector(".loader-bar");
 
@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ── Testimonials Slider ──
-  const slides       = document.querySelectorAll(".testimonial");
+  const slides = document.querySelectorAll(".testimonial");
   const dotsContainer = document.getElementById("testimonials-dots");
-  const sliderEl     = document.getElementById("testimonials-slider");
+  const sliderEl = document.getElementById("testimonials-slider");
   let current = 0;
   let autoTimer = null;
 
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         end: "bottom 20%",
         scrub: true,
       },
-      color: "green",
+      color: "#B1AFAF",
       stagger: 1,
       duration: 1,
     });

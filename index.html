@@ -23,17 +23,23 @@
     </div>
 
     <nav id="main-nav">
-      <div class="nav-logo" id="nav-logo">Bojan Bogdanović</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#">My Work</a></li>
-        <li><a href="#">Photos</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="container nav-content">
+        <div class="nav-logo" id="nav-logo">Bojan Bogdanović</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#">My Work</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <button
+          class="nav-hamburger"
+          id="nav-hamburger"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
@@ -85,7 +91,11 @@
 
       <img src="me.png" alt="Bojan Bogdanović" class="person" />
 
-      <div class="description">Frontend developer &amp;<br />Web Designer</div>
+      <div class="hero-desc-bar">
+        <div class="container hero-desc-inner">
+          <div class="description">Frontend developer &amp;<br />Web Designer</div>
+        </div>
+      </div>
     </section>
 
     <section class="work section" id="work">
@@ -192,48 +202,54 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="footer-top">
-          <div class="section-label">// Contact Us</div>
-          <div class="footer-links">
-            <a
-              href="mailto:bojan@example.com"
-              class="footer-link footer-link-email"
-            >
-              Email
-              <svg
-                viewBox="0 0 14 14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path d="M2 12L12 2M12 2H5M12 2v7" />
-              </svg>
-            </a>
-            <a href="#" class="footer-link">
-              Instagram
-              <svg
-                viewBox="0 0 14 14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path d="M2 12L12 2M12 2H5M12 2v7" />
-              </svg>
-            </a>
-            <a href="#" class="footer-link">
-              Tiktok
-              <svg
-                viewBox="0 0 14 14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path d="M2 12L12 2M12 2H5M12 2v7" />
-              </svg>
-            </a>
-          </div>
+        <div class="section-label">// Want to Collaborate</div>
+
+        <div class="footer-heading-wrapper">
+          <a href="mailto:bojan@example.com" class="footer-heading">
+            Get in Touch
+          </a>
+          <svg
+            width="86"
+            height="86"
+            viewBox="0 0 86 86"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M81.6878 71.2706C80.6922 71.27 79.7375 70.8742 79.0335 70.1702C78.3294 69.4661 77.9336 68.5114 77.933 67.5158L77.9286 12.8271L6.41402 84.3417C5.70941 85.0463 4.75376 85.4421 3.75729 85.4421C2.76083 85.4421 1.80518 85.0463 1.10057 84.3417C0.395963 83.6371 0.000120037 82.6814 0.000120024 81.685C0.000120012 80.6885 0.395965 79.7329 1.10057 79.0282L72.6151 7.51369L17.9265 7.50926C16.9536 7.47492 16.032 7.06428 15.3558 6.36387C14.6797 5.66345 14.3019 4.72794 14.3019 3.75442C14.3019 2.78091 14.6797 1.8454 15.3558 1.14498C16.032 0.444564 16.9536 0.0339295 17.9265 -0.00041289L81.6878 -0.000410828C82.6835 0.000208743 83.6382 0.396004 84.3422 1.10004C85.0463 1.80407 85.4421 2.75877 85.4427 3.75443L85.4427 67.5158C85.4421 68.5114 85.0463 69.4661 84.3422 70.1702C83.6382 70.8742 82.6835 71.27 81.6878 71.2706Z"
+              fill="white"
+            />
+          </svg>
         </div>
-        <div class="footer-bottom">
+
+        <div class="footer-links">
+          <a href="mailto:bojan@example.com" class="footer-link"> Email </a>
+          <a href="#" class="footer-link">
+            Instagram
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+          <a href="#" class="footer-link">
+            Tiktok
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
           <a href="#" class="footer-privacy">Privacy</a>
           <span class="footer-copy"
             >Copyright &copy; Bojan Bogdanović &mdash; 2025</span
