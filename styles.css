@@ -485,69 +485,56 @@ p {
   background: #fff;
 }
 
-.testimonials-slider {
-  position: relative;
-  max-width: 780px;
-  margin: 0 auto;
-  min-height: 220px;
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 54% 46%;
+  gap: 10px;
+  margin-top: 80px;
 }
 
-.testimonial {
-  position: absolute;
-  inset: 0;
+.t-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
+  padding: 48px 44px 44px;
 }
 
-.testimonial.active {
-  opacity: 1;
-  pointer-events: auto;
-  position: relative;
+.t-card--light {
+  background: #f0f0f0;
+  color: #000;
 }
 
-.testimonial-quote {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
-  color: #222;
-  margin-bottom: 40px;
-  quotes: none;
+.t-card--light .t-mark,
+.t-card--light .t-text,
+.t-card--light .t-author {
+  color: #000;
 }
 
-.testimonial-author {
+.t-card--dark {
+  background: #111;
+  color: #fff;
+}
+
+.t-mark {
+  font-family: "Antonio", sans-serif;
+  font-size: 80px;
+  line-height: 0.9;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.t-text {
+  font-family: "Antonio", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 48px;
+}
+
+.t-author {
   font-family: "Antonio", sans-serif;
   font-weight: 700;
-  font-size: 28px;
-  color: #000;
+  font-size: 24px;
   line-height: 1;
-}
-
-.testimonials-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 40px;
-}
-
-.testimonial-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #ccc;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.25s ease;
-}
-
-.testimonial-dot.active {
-  background: #000;
 }
 
 /* ─── FOOTER ─── */
@@ -807,13 +794,24 @@ p {
     margin-top: 40px;
   }
 
-  .testimonial-quote {
-    font-size: 16px;
-    line-height: 1.6;
+  .testimonials-grid {
+    grid-template-columns: 1fr;
   }
 
-  .testimonial-author {
-    font-size: 22px;
+  .t-card {
+    padding: 36px 28px 32px;
+  }
+
+  .t-mark {
+    font-size: 60px;
+  }
+
+  .t-text {
+    font-size: 16px;
+  }
+
+  .t-author {
+    font-size: 20px;
   }
 
   .footer-heading {
@@ -896,11 +894,3 @@ p {
   opacity: 0;
 }
 
-/* Testimonials drag cursor */
-.testimonials-slider {
-  cursor: grab;
-}
-
-.testimonials-slider:active {
-  cursor: grabbing;
-}
