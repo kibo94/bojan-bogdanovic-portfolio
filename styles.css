@@ -114,13 +114,14 @@ nav.scrolled .nav-hamburger span {
 .hero-v2-inner {
   display: flex;
   width: 100%;
-  flex: 1;
-  min-height: 0;
+  height: 100%;
   padding-top: 65px;
 }
 
 .hero-v2-left {
-  flex: 0 0 55%;
+  flex: 0 0 48%;
+  min-width: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -131,7 +132,7 @@ nav.scrolled .nav-hamburger span {
 .hero-tag {
   font-family: "Antonio", sans-serif;
   font-size: 18px;
-  font-weight: 400;
+
   text-transform: uppercase;
   color: #000;
   display: flex;
@@ -170,7 +171,7 @@ nav.scrolled .nav-hamburger span {
 }
 
 .hero-v2-right {
-  flex: 0 0 45%;
+  flex: 0 0 52%;
   position: relative;
   overflow: hidden;
 }
@@ -785,6 +786,7 @@ p {
     flex: none;
     height: calc(40vh - 60px);
     padding: 24px 20px 24px;
+    gap: 8px;
   }
 
   .hero-v2-right {
@@ -796,6 +798,10 @@ p {
 
   .hero-heading {
     font-size: clamp(56px, 16vw, 100px);
+  }
+
+  .hero-tag {
+    font-size: 16px;
   }
 
   .work-list {
