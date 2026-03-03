@@ -90,6 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // ── Work Video Hover ──
+  document.querySelectorAll(".slide-media").forEach((media) => {
+    const video = media.querySelector(".slide-video");
+    if (!video) return;
+    media.addEventListener("mouseenter", () => video.play().catch(() => {}));
+    media.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+
   // ── Testimonials Mobile Carousel ──
   const tTrack = document.getElementById("t-track");
   const tCards = document.querySelectorAll(".t-card");
