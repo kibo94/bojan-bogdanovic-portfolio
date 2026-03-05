@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>About Me — Bojan Bogdanović</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="about.css" />
+
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div class="container nav-content">
+        <a href="index.html" class="nav-logo" id="nav-logo">Bojan Bogdanović</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html#work">My Work</a></li>
+          <li><a href="about.html" class="nav-active">About me</a></li>
+          <li><a href="index.html#contact">Contact me</a></li>
+        </ul>
+        <button
+          class="nav-hamburger"
+          id="nav-hamburger"
+          aria-label="Toggle menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a
+        href="index.html#work"
+        class="mobile-menu-link"
+        onclick="closeMobileMenu()"
+        >My Work</a
+      >
+      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+        >About me</a
+      >
+      <a
+        href="index.html#contact"
+        class="mobile-menu-link"
+        onclick="closeMobileMenu()"
+        >Contact me</a
+      >
+    </div>
+
+    <section class="about-hero">
+      <img
+        src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&auto=format&fit=crop&q=80"
+        alt="Urban street scene"
+        class="about-hero-photo"
+        id="hero-photo-left"
+      />
+
+      <div class="about-hero-center" id="hero-center">
+        <h1 class="about-hero-title">About Me</h1>
+        <div class="about-hero-bio">
+          <p>
+            My name is Bojan Bogdanovic, I'm 31 years old and based in Čačak,
+            Serbia. I consider myself a hardworking and dedicated person, guided
+            by faith and always ready to bring a bit of humor into any moment.
+          </p>
+          <p>
+            I love traveling, exploring new places and cultures, and I
+            especially enjoy capturing meaningful moments through photography —
+            whether it's nature, cities, or spontaneous scenes along the way.
+          </p>
+          <p>
+            At my core, I try to live simply, honestly, and with purpose, always
+            working on myself and the goals I set.
+          </p>
+        </div>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80"
+        alt="Coastal sunset"
+        class="about-hero-photo"
+        id="hero-photo-right"
+      />
+    </section>
+
+    <!-- ─── PHOTO GRID ─── -->
+    <section class="about-grid container">
+      <!-- Places -->
+      <div class="about-grid-group">
+        <p class="about-grid-group-label">// Places</p>
+        <div class="about-grid-row">
+          <div class="about-grid-item about-grid-item--portrait">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=80"
+              alt="Rocky cliffs"
+            />
+          </div>
+          <div class="about-grid-item about-grid-item--square">
+            <img
+              src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
+              alt="Ornate church ceiling"
+            />
+          </div>
+        </div>
+        <div class="about-grid-row">
+          <div class="about-grid-item about-grid-item--landscape">
+            <img
+              src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=900&auto=format&fit=crop&q=80"
+              alt="Medieval castle on hill"
+            />
+          </div>
+          <div class="about-grid-item about-grid-item--square">
+            <img
+              src="https://images.unsplash.com/photo-1586016413664-864c0dd76f53?w=800&auto=format&fit=crop&q=80"
+              alt="Cliff monastery"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Nature -->
+      <div class="about-grid-group">
+        <p class="about-grid-group-label">// Nature</p>
+        <div class="about-grid-row">
+          <div class="about-grid-item about-grid-item--wide">
+            <img
+              src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?w=1000&auto=format&fit=crop&q=80"
+              alt="Birds in blue sky"
+            />
+          </div>
+          <div class="about-grid-item about-grid-item--square">
+            <img
+              src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&auto=format&fit=crop&q=80"
+              alt="Green mountain valley"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- City -->
+      <div class="about-grid-group">
+        <p class="about-grid-group-label">// City</p>
+        <div class="about-grid-row">
+          <div class="about-grid-item about-grid-item--square">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80"
+              alt="Tower at night"
+            />
+          </div>
+          <div class="about-grid-item about-grid-item--square">
+            <img
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80"
+              alt="Colorful street mural"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer dark">
+      <div class="container">
+        <div class="section-label">// Want to Collaborate</div>
+        <div class="footer-heading-wrapper" id="contact">
+          <a href="mailto:bojan@example.com" class="footer-heading"
+            >Get in Touch</a
+          >
+          <svg
+            width="86"
+            height="86"
+            viewBox="0 0 86 86"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M81.6878 71.2706C80.6922 71.27 79.7375 70.8742 79.0335 70.1702C78.3294 69.4661 77.9336 68.5114 77.933 67.5158L77.9286 12.8271L6.41402 84.3417C5.70941 85.0463 4.75376 85.4421 3.75729 85.4421C2.76083 85.4421 1.80518 85.0463 1.10057 84.3417C0.395963 83.6371 0.000120037 82.6814 0.000120024 81.685C0.000120012 80.6885 0.395965 79.7329 1.10057 79.0282L72.6151 7.51369L17.9265 7.50926C16.9536 7.47492 16.032 7.06428 15.3558 6.36387C14.6797 5.66345 14.3019 4.72794 14.3019 3.75442C14.3019 2.78091 14.6797 1.8454 15.3558 1.14498C16.032 0.444564 16.9536 0.0339295 17.9265 -0.00041289L81.6878 -0.000410828C82.6835 0.000208743 83.6382 0.396004 84.3422 1.10004C85.0463 1.80407 85.4421 2.75877 85.4427 3.75443L85.4427 67.5158C85.4421 68.5114 85.0463 69.4661 84.3422 70.1702C83.6382 70.8742 82.6835 71.27 81.6878 71.2706Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:bojan@example.com" class="footer-link">Email</a>
+          <a href="#" class="footer-link">
+            Instagram
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+          <a href="#" class="footer-link">
+            Tiktok
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
+          <a href="#" class="footer-privacy">Privacy</a>
+          <span class="footer-copy"
+            >Copyright &copy; Bojan Bogdanović &mdash; 2025</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+        tl.from("#hero-center", { opacity: 0, y: 40, duration: 1, delay: 0.1 })
+          .from(
+            "#hero-photo-left",
+            { opacity: 0, x: -60, duration: 0.9 },
+            "-=0.7",
+          )
+          .from("#hero-photo-right", { opacity: 0, x: 60, duration: 0.9 }, "<");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+/* Sections hidden until loader exits */
+.hero, .work, .about, .testimonials, footer {
+  opacity: 1;
+}
+
+/* Footer overrides */
+.footer .section-label,
+.footer-heading,
+.footer-link {
+  color: #000 !important;
+}
+.footer-heading svg {
+  fill: #000 !important;
+}
+.footer-link svg {
+  stroke: #000 !important;
+}
+.footer-bottom {
+  background: #fff !important;
+}
+.footer-privacy,
+.footer-copy {
+  color: #000 !important;
+  background: transparent;
+}
