@@ -34,7 +34,7 @@ body {
 body {
   font-family: "Antonio", sans-serif;
   color: var(--txt-black);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.03%;
 }
 
 /* ─── CONTAINER ─── */
@@ -214,7 +214,7 @@ nav.scrolled .nav-hamburger span {
 /* ─── SECTION LABELS (shared) ─── */
 .section-label {
   font-family: "Antonio", sans-serif;
-  font-weight: 700;
+  
   font-size:20px;
   text-transform: uppercase;
   color: inherit;
@@ -250,9 +250,6 @@ gap: 150px;
   display: flex;
   align-items: start;
   gap: 60px;
-  padding-top: 48px;
-  padding-bottom: 48px;
-
 }
 
 
@@ -646,6 +643,13 @@ p {
   min-height: 360px;
 }
 
+.t-quote {
+  display: block;
+  color: var(--txt-black);
+  margin-bottom: 16px;
+  line-height: 0;
+}
+
 .t-text {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -654,7 +658,7 @@ p {
   color: #1a1a1a;
   flex: 1;
   width: 90%;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   letter-spacing: 0;
 }
 
@@ -691,6 +695,8 @@ p {
   gap: 8px;
   align-items: center;
   padding-top: 40px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .t-dot {
@@ -868,11 +874,11 @@ p {
   }
 
   .hero-heading {
-    font-size: clamp(44px, 14vw, 110px);
+    font-size: clamp(44px, 18vw, 110px);
   }
 
   .hero-tag {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .work-list {
@@ -910,8 +916,6 @@ p {
   .work-item {
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 24px;
-    padding-bottom: 32px;
     gap: 20px;
   }
 
@@ -921,7 +925,7 @@ p {
   }
 
   .slide-title {
-    font-size: clamp(28px, 13vw, 72px);
+    font-size: clamp(40px, 13vw, 72px);
   }
 
   .slide-link {
@@ -943,6 +947,15 @@ p {
 
   .about-content {
     width: 100%;
+  }
+
+  .slide-video {
+    display: none;
+  }
+
+  .slide-media:hover .slide-img {
+    filter: none;
+    transform: none;
   }
 
   .animate {
@@ -975,6 +988,7 @@ p {
   .t-text {
     font-size: 15px;
     margin-bottom: 28px;
+    width: 100%;
   }
 
   .t-dots {
@@ -1025,8 +1039,6 @@ p {
 @media (max-width: 1024px) {
   .work-item {
     gap: 32px;
-    padding-top: 36px;
-    padding-bottom: 36px;
   }
 
   .work-item-info {
@@ -1038,10 +1050,10 @@ p {
   }
 
   .slide-title {
-    font-size: clamp(36px, 5.5vw, 80px);
+    font-size: clamp(40px, 5.5vw, 80px);
   }
     .work-list {
-    gap: 20px;
+    gap: 60px;
   }
 }
 

@@ -33,6 +33,14 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  // ── Lenis smooth scroll ──
+  if (window.Lenis) {
+    const lenis = new window.Lenis({ lerp: 0.08, smoothWheel: true });
+    lenis.on("scroll", () => ScrollTrigger.update());
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
   const loaderEl = document.getElementById("loader");
   const loaderNumEl = document.getElementById("loader-num");
   const loaderBarEl = document.querySelector(".loader-bar");
@@ -99,11 +107,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // ── Project Image — bottom to top reveal ──
+  gsap.utils.toArray(".slide-media").forEach((media) => {
+    gsap.fromTo(media,
+      { clipPath: "inset(100% 0 0% 0)" },
+      {
+        clipPath: "inset(0% 0 0% 0)",
+        duration: 1.2,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: media.closest(".work-item"),
+          start: "top 80%",
+          once: true,
+        },
+      }
+    );
+  });
+
   // ── Work Video Hover ──
   document.querySelectorAll(".slide-media").forEach((media) => {
     const video = media.querySelector(".slide-video");
     if (!video) return;
-    media.addEventListener("mouseenter", () => video.play().catch(() => {}));
+    media.addEventListener("mouseenter", () => video.play().catch(() => { }));
     media.addEventListener("mouseleave", () => {
       video.pause();
       video.currentTime = 0;
@@ -111,10 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ── Testimonials Infinite Draggable Slider ──
-  const tViewport  = document.getElementById("t-viewport");
-  const tTrackEl   = document.getElementById("t-track");
-  const realCards  = Array.from(document.querySelectorAll(".t-card"));
-  const tDots      = document.querySelectorAll(".t-dot");
+  const tViewport = document.getElementById("t-viewport");
+  const tTrackEl = document.getElementById("t-track");
+  const realCards = Array.from(document.querySelectorAll(".t-card"));
+  const tDots = document.querySelectorAll(".t-dot");
 
   // Clone cards before and after originals for infinite loop
   realCards.forEach(card => {
@@ -141,14 +166,14 @@ document.addEventListener("DOMContentLoaded", () => {
   tViewport.scrollLeft = getSetWidth();
 
   // ── Mouse drag ──
-  let isDragging    = false;
-  let dragStartX    = 0;
+  let isDragging = false;
+  let dragStartX = 0;
   let dragScrollLeft = 0;
 
   function snapToNearest() {
-    const sw     = getSetWidth();
+    const sw = getSetWidth();
     const stride = cardStride();
-    const delta  = tViewport.scrollLeft - dragScrollLeft;
+    const delta = tViewport.scrollLeft - dragScrollLeft;
     const threshold = stride * 0.2;
 
     let normStart = dragScrollLeft;
@@ -157,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startIdx = Math.round((normStart - sw) / stride);
 
     let targetIdx = startIdx;
-    if (delta > threshold)       targetIdx = startIdx + 1;
+    if (delta > threshold) targetIdx = startIdx + 1;
     else if (delta < -threshold) targetIdx = startIdx - 1;
 
     const targetScroll = sw + targetIdx * stride;
@@ -168,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "expo.out",
       onComplete: () => {
         if (tViewport.scrollLeft >= sw * 2) tViewport.scrollLeft -= sw;
-        else if (tViewport.scrollLeft < 1)  tViewport.scrollLeft += sw;
+        else if (tViewport.scrollLeft < 1) tViewport.scrollLeft += sw;
         tViewport.classList.remove("is-grabbing");
         syncDots();
       },
@@ -177,8 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── Mouse drag ──
   tViewport.addEventListener("mousedown", (e) => {
-    isDragging     = true;
-    dragStartX     = e.pageX - tViewport.offsetLeft;
+    isDragging = true;
+    dragStartX = e.pageX - tViewport.offsetLeft;
     dragScrollLeft = tViewport.scrollLeft;
     tViewport.classList.add("is-grabbing");
     e.preventDefault();
@@ -192,22 +217,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
-    const x    = e.pageX - tViewport.offsetLeft;
+    const x = e.pageX - tViewport.offsetLeft;
     const walk = (x - dragStartX) * 1.4;
     tViewport.scrollLeft = dragScrollLeft - walk;
   });
 
   // ── Touch drag ──
   tViewport.addEventListener("touchstart", (e) => {
-    isDragging     = true;
-    dragStartX     = e.touches[0].pageX - tViewport.offsetLeft;
+    isDragging = true;
+    dragStartX = e.touches[0].pageX - tViewport.offsetLeft;
     dragScrollLeft = tViewport.scrollLeft;
     tViewport.classList.add("is-grabbing");
   }, { passive: true });
 
   tViewport.addEventListener("touchmove", (e) => {
     if (!isDragging) return;
-    const x    = e.touches[0].pageX - tViewport.offsetLeft;
+    const x = e.touches[0].pageX - tViewport.offsetLeft;
     const walk = (x - dragStartX) * 1.4;
     tViewport.scrollLeft = dragScrollLeft - walk;
   }, { passive: true });
@@ -221,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Dot click → scroll to original card ──
   tDots.forEach((dot) => {
     dot.addEventListener("click", () => {
-      const idx    = parseInt(dot.dataset.idx);
+      const idx = parseInt(dot.dataset.idx);
       const target = getSetWidth() + idx * cardStride();
       tViewport.scrollTo({ left: target, behavior: "smooth" });
     });
@@ -229,11 +254,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── Sync dots to current position ──
   function syncDots() {
-    const sw  = getSetWidth();
-    let sl    = tViewport.scrollLeft;
+    const sw = getSetWidth();
+    let sl = tViewport.scrollLeft;
     // Normalize to original-set range
-    if (sl < sw)       sl += sw;
-    if (sl >= sw * 2)  sl -= sw;
+    if (sl < sw) sl += sw;
+    if (sl >= sw * 2) sl -= sw;
     const idx = Math.min(Math.floor((sl - sw) / cardStride()), realCards.length - 1);
     tDots.forEach((dot, i) => dot.classList.toggle("t-dot--active", i === idx));
   }
