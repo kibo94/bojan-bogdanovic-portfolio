@@ -67,7 +67,9 @@ nav {
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
+  text-decoration: none;
   transition: color 0.3s ease;
+  color: black;
 }
 
 .nav-links {
@@ -1259,6 +1261,16 @@ p {
   nav {
     padding: 28px 40px;
   }
+}
+
+/* ─── PAGE TRANSITION COVER ─── */
+#page-cover {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-dark);
+  z-index: 9990;
+  pointer-events: none;
+  will-change: transform;
 }
 
 /* ─── LOADER ─── */

@@ -3,6 +3,11 @@
   opacity: 1;
 }
 
+/* White page transition cover on about page */
+#page-cover {
+  background: var(--clr-bg);
+}
+
 /* Footer overrides — dark theme for about page */
 .footer {
   background: var(--clr-dark);
@@ -209,7 +214,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%);
+
   transition: filter 0.5s ease, transform 0.55s ease;
 }
 

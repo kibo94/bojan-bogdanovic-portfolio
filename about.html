@@ -21,7 +21,7 @@
       <div class="container nav-content">
         <a href="index.html" class="nav-logo" id="nav-logo">Bojan Bogdanović</a>
         <ul class="nav-links" id="nav-links">
-          <li><a href="index.html#work">My Work</a></li>
+          <li><a href="work.html">My Work</a></li>
           <li><a href="about.html" class="nav-active">About me</a></li>
           <li><a href="index.html#contact">Contact me</a></li>
         </ul>
@@ -37,20 +37,13 @@
 
     <div class="mobile-menu" id="mobile-menu">
       <a
-        href="index.html#work"
+        href="work.html"
         class="mobile-menu-link"
         onclick="closeMobileMenu()"
         >My Work</a
       >
-      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()"
-        >About me</a
-      >
-      <a
-        href="index.html#contact"
-        class="mobile-menu-link"
-        onclick="closeMobileMenu()"
-        >Contact me</a
-      >
+      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()">About me</a>
+      <a href="index.html#contact" class="mobile-menu-link" onclick="closeMobileMenu()">Contact me</a>
     </div>
 
     <!-- ─── HERO ROW: images + heading ─── -->
@@ -243,47 +236,15 @@
     <script src="script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // ── Hero entrance ──
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-        tl.from("#hero-center", { opacity: 0, y: 40, duration: 1, delay: 0.1 })
-          .from("#hero-photo-left",  { opacity: 0, x: -60, duration: 0.9 }, "-=0.7")
-          .from("#hero-photo-right", { opacity: 0, x:  60, duration: 0.9 }, "<");
+        // No page cover on this page
+        const cover = document.getElementById("page-cover");
+        if (cover) {
+          gsap.killTweensOf(cover);
+          gsap.set(cover, { yPercent: -100 });
+        }
 
-        // ── Bio paragraphs — slide from side on scroll ──
-        document.querySelectorAll(".about-bio .bio-left").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0, x: -50, duration: 0.9, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%", once: true },
-          });
-        });
-
-        document.querySelectorAll(".about-bio .bio-right").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0, x: 50, duration: 0.9, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%", once: true },
-          });
-        });
-
-        // ── "Photos Are My Hobby" heading — scale + fade ──
-        gsap.from(".photos-intro-heading", {
-          opacity: 0, y: 60, duration: 1.1, ease: "power4.out",
-          scrollTrigger: { trigger: ".photos-intro-heading", start: "top 85%", once: true },
-        });
-
-        // ── Intro text paragraphs — slide from side ──
-        document.querySelectorAll(".photos-intro-text .bio-left").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0, x: -50, duration: 0.9, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%", once: true },
-          });
-        });
-
-        document.querySelectorAll(".photos-intro-text .bio-right").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0, x: 50, duration: 0.9, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%", once: true },
-          });
-        });
+        // Clear any opacity/transform set by script.js scroll reveals
+        gsap.set("footer", { clearProps: "opacity,y,transform" });
       });
     </script>
   </body>

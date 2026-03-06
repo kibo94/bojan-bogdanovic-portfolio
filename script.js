@@ -34,6 +34,48 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  // ── Page Transition Cover ──
+  const cover = document.createElement("div");
+  cover.id = "page-cover";
+  document.body.appendChild(cover);
+
+  if (!document.getElementById("loader")) {
+    // Pages without loader: slide cover up to reveal content
+    gsap.fromTo(cover,
+      { yPercent: 0 },
+      { yPercent: -100, duration: 0.9, ease: "expo.inOut", delay: 0.05 }
+    );
+  } else {
+    // index.html: loader already handles entrance, hide cover immediately
+    gsap.set(cover, { yPercent: -100 });
+  }
+
+  // Exit animation: slide cover in from bottom, then navigate
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (
+      href &&
+      !href.startsWith("#") &&
+      !href.startsWith("mailto") &&
+      !href.startsWith("http") &&
+      !href.startsWith("//")
+    ) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        cover.style.background = href.includes("about") ? "var(--clr-bg)" : "var(--clr-dark)";
+        gsap.fromTo(cover,
+          { yPercent: 100 },
+          {
+            yPercent: 0,
+            duration: 0.65,
+            ease: "expo.inOut",
+            onComplete: () => { window.location.href = href; },
+          }
+        );
+      });
+    }
+  });
+
   // ── Lenis smooth scroll ──
   if (window.Lenis) {
     const lenis = new window.Lenis({ lerp: 0.08, smoothWheel: true });

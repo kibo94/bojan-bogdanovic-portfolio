@@ -44,8 +44,7 @@
     <!-- ─── WORK HERO ─── -->
     <section class="work-page-hero container">
       <div class="work-page-hero-inner" id="work-hero-inner">
-        <p class="work-page-label">// Selected Work</p>
-        <h1 class="work-page-title">My<br>Projects</h1>
+        <h1 class="work-page-title">My<br />Projects</h1>
       </div>
     </section>
 
@@ -53,7 +52,6 @@
     <section class="work work-page-list" id="work">
       <div class="container">
         <div class="work-list">
-
           <!-- 01: Fića -->
           <div class="work-item">
             <div class="work-item-info">
@@ -179,7 +177,6 @@
               </video>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -189,7 +186,9 @@
       <div class="container">
         <div class="section-label">// Want to Collaborate</div>
         <div class="footer-heading-wrapper" id="contact">
-          <a href="mailto:bojan@example.com" class="footer-heading">Get in Touch</a>
+          <a href="mailto:bojan@example.com" class="footer-heading"
+            >Get in Touch</a
+          >
           <svg
             width="86"
             height="86"
@@ -206,19 +205,34 @@
         <div class="footer-links">
           <a href="mailto:bojan@example.com" class="footer-link">
             Email
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
               <path d="M2 12L12 2M12 2H5M12 2v7" />
             </svg>
           </a>
           <a href="#" class="footer-link">
             Instagram
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
               <path d="M2 12L12 2M12 2H5M12 2v7" />
             </svg>
           </a>
           <a href="#" class="footer-link">
             Tiktok
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
               <path d="M2 12L12 2M12 2H5M12 2v7" />
             </svg>
           </a>
@@ -227,7 +241,9 @@
       <div class="footer-bottom">
         <div class="container footer-bottom-content">
           <a href="#" class="footer-privacy">Privacy</a>
-          <span class="footer-copy">Copyright &copy; Bojan Bogdanović &mdash; 2026</span>
+          <span class="footer-copy"
+            >Copyright &copy; Bojan Bogdanović &mdash; 2026</span
+          >
         </div>
       </div>
     </footer>
@@ -238,50 +254,20 @@
     <script src="script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // ── Hero entrance ──
-        gsap.from("#work-hero-inner", {
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          ease: "power4.out",
-          delay: 0.1,
+        // No page cover on this page
+        const cover = document.getElementById("page-cover");
+        if (cover) {
+          gsap.killTweensOf(cover);
+          gsap.set(cover, { yPercent: -100 });
+        }
+
+        // Cancel script.js opacity:0 + ScrollTrigger on .work — already in viewport
+        gsap.set(".work-page-list", { clearProps: "opacity,y,transform" });
+        ScrollTrigger.getAll().forEach((st) => {
+          if (st.trigger && st.trigger.classList.contains("work-page-list"))
+            st.kill();
         });
 
-        // ── Work items — staggered reveal ──
-        gsap.utils.toArray(".work-item").forEach((item, i) => {
-          const info = item.querySelector(".work-item-info");
-          const media = item.querySelector(".slide-media");
-
-          gsap.from(info, {
-            opacity: 0,
-            x: -40,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: { trigger: item, start: "top 82%", once: true },
-          });
-
-          gsap.fromTo(
-            media,
-            { clipPath: "inset(100% 0 0% 0)" },
-            {
-              clipPath: "inset(0% 0 0% 0)",
-              duration: 1.2,
-              ease: "power3.inOut",
-              scrollTrigger: { trigger: item, start: "top 80%", once: true },
-            }
-          );
-        });
-
-        // ── Video hover ──
-        document.querySelectorAll(".slide-media").forEach((media) => {
-          const video = media.querySelector(".slide-video");
-          if (!video) return;
-          media.addEventListener("mouseenter", () => video.play().catch(() => {}));
-          media.addEventListener("mouseleave", () => {
-            video.pause();
-            video.currentTime = 0;
-          });
-        });
       });
     </script>
   </body>

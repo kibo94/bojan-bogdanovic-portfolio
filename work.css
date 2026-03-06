@@ -37,7 +37,8 @@
 
 /* ─── WORK PAGE LIST ─── */
 .work-page-list {
-  padding-top: 0;
+  padding-top: 120px;
+  padding-bottom: 200px;
 }
 
 /* ─── NAV ACTIVE ─── */
