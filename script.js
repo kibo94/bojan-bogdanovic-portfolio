@@ -62,6 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
+        if (href.startsWith("index.html")) {
+          window.location.href = href;
+          return;
+        }
         cover.style.background = href.includes("about") ? "var(--clr-bg)" : "var(--clr-dark)";
         gsap.fromTo(cover,
           { yPercent: 100 },
