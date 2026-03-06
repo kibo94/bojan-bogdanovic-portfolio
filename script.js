@@ -25,40 +25,9 @@ function closeMobileMenu() {
 
 // ── Nav Scroll State ──
 const nav = document.getElementById("main-nav");
-const NAV_TO_BOTTOM = window.innerHeight * 0.90; // scroll past ~end of hero → nav goes bottom
-const NAV_TO_TOP    = window.innerHeight * 0.70; // scroll back under 70vh → nav returns top
-let navState = "top"; // "top" | "transitioning" | "bottom"
 
 window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-
-  // Dark bg tint while nav is at top
-  if (navState === "top") {
-    nav.classList.toggle("scrolled", y > 80);
-  }
-
-  // top → bottom
-  if (y > NAV_TO_BOTTOM && navState === "top") {
-    navState = "transitioning";
-    nav.classList.add("nav-exit-top");
-    setTimeout(() => {
-      nav.classList.remove("nav-exit-top", "scrolled");
-      nav.classList.add("nav-bottom", "nav-enter-bottom");
-      setTimeout(() => nav.classList.remove("nav-enter-bottom"), 520);
-      navState = "bottom";
-    }, 350);
-  }
-
-  // bottom → top
-  if (y < NAV_TO_TOP && navState === "bottom") {
-    navState = "transitioning";
-    nav.classList.remove("nav-bottom");
-    nav.classList.add("nav-enter-top");
-    setTimeout(() => {
-      nav.classList.remove("nav-enter-top");
-      navState = "top";
-    }, 520);
-  }
+  nav.classList.toggle("scrolled", window.scrollY > 80);
 }, { passive: true });
 
 // ── Main Init ──
