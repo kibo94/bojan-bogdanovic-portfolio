@@ -5,7 +5,9 @@
 
 /* ─── WORK PAGE HERO ─── */
 .work-page-hero {
-  padding-top: 160px;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
   padding-bottom: 80px;
 }
 
