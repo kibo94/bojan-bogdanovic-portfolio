@@ -5,7 +5,7 @@
 
 /* ─── WORK PAGE HERO ─── */
 .work-page-hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: flex-end;
   padding-bottom: 80px;
@@ -41,6 +41,14 @@
 .work-page-list {
   padding-top: 120px;
   padding-bottom: 200px;
+}
+
+.work-page-list .work-item {
+  justify-content: space-between;
+}
+
+.work-page-list .slide-media {
+  flex: 0 0 55%;
 }
 
 /* ─── NAV ACTIVE ─── */

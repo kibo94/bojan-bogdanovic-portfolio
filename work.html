@@ -36,9 +36,18 @@
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-      <a href="work.html" class="mobile-menu-link" onclick="closeMobileMenu()">My Work</a>
-      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()">About me</a>
-      <a href="index.html#contact" class="mobile-menu-link" onclick="closeMobileMenu()">Contact me</a>
+      <a href="work.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+        >My Work</a
+      >
+      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+        >About me</a
+      >
+      <a
+        href="index.html#contact"
+        class="mobile-menu-link"
+        onclick="closeMobileMenu()"
+        >Contact me</a
+      >
     </div>
 
     <!-- ─── WORK HERO ─── -->
@@ -252,23 +261,5 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // No page cover on this page
-        const cover = document.getElementById("page-cover");
-        if (cover) {
-          gsap.killTweensOf(cover);
-          gsap.set(cover, { yPercent: -100 });
-        }
-
-        // Cancel script.js opacity:0 + ScrollTrigger on .work — already in viewport
-        gsap.set(".work-page-list", { clearProps: "opacity,y,transform" });
-        ScrollTrigger.getAll().forEach((st) => {
-          if (st.trigger && st.trigger.classList.contains("work-page-list"))
-            st.kill();
-        });
-
-      });
-    </script>
   </body>
 </html>

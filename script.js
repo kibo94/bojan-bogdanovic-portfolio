@@ -48,11 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(cover);
 
   if (!document.getElementById("loader")) {
-    // Pages without loader: slide cover up to reveal content
-    gsap.fromTo(cover,
-      { yPercent: 0 },
-      { yPercent: -100, duration: 0.9, ease: "expo.inOut", delay: 0.05 }
-    );
+    const workTitle = document.querySelector(".work-page-title");
+
+    if (workTitle) {
+      // Work page: no cover slide, just animate the heading in from below
+      gsap.set(cover, { yPercent: -100 });
+      gsap.set(workTitle, { y: 80, opacity: 0 });
+      gsap.to(workTitle, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power4.out",
+        delay: 0.2,
+      });
+    } else {
+      // Other pages without loader: slide cover up to reveal content
+      gsap.fromTo(cover,
+        { yPercent: 0 },
+        { yPercent: -100, duration: 0.9, ease: "expo.inOut", delay: 0.05 }
+      );
+    }
   } else {
     // index.html: loader already handles entrance, hide cover immediately
     gsap.set(cover, { yPercent: -100 });
@@ -81,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             yPercent: 0,
             duration: 0.65,
             ease: "expo.inOut",
-            onComplete: () => { window.location.href = href; },
+            onComplete: () => { sessionStorage.setItem("page-transition", "1"); window.location.href = href; },
           }
         );
       });
