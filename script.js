@@ -1,3 +1,17 @@
+// ─────────────────────────────────────────────
+// PAGE TRANSITION COVER COLORS
+// Set the color of the slide cover when leaving each page.
+// Values can be CSS variables (e.g. "var(--clr-dark)") or any CSS color.
+// ─────────────────────────────────────────────
+const TRANSITION_COLORS = {
+  "index.html": "var(--clr-dark)",   // leaving Home
+  "work.html":  "var(--clr-bg)",     // leaving My Work
+  "about.html": "var(--clr-bg)",     // leaving About
+};
+// Fallback color if the page isn't listed above
+const TRANSITION_COLOR_DEFAULT = "var(--clr-dark)";
+// ─────────────────────────────────────────────
+
 // ── Mobile Menu Toggle ──
 const hamburger = document.getElementById("nav-hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -48,19 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(cover);
 
   if (!document.getElementById("loader")) {
-    const workTitle = document.querySelector(".work-page-title");
-
-    if (workTitle) {
-      // Work page: no cover slide, just animate the heading in from below
+    if (document.querySelector(".work-page-title")) {
+      // Work page: hide cover immediately, work.js handles heading animation
       gsap.set(cover, { yPercent: -100 });
-      gsap.set(workTitle, { y: 80, opacity: 0 });
-      gsap.to(workTitle, {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power4.out",
-        delay: 0.2,
-      });
     } else {
       // Other pages without loader: slide cover up to reveal content
       gsap.fromTo(cover,
@@ -73,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(cover, { yPercent: -100 });
   }
 
-  // Exit animation: slide cover in from bottom, then navigate
+  // ── Exit animation: slide cover in from bottom, then navigate ──
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
     if (
@@ -85,11 +89,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        if (href === currentPage || href.split("#")[0] === currentPage) return;
         if (href.startsWith("index.html")) {
           window.location.href = href;
           return;
         }
-        cover.style.background = href.includes("about") ? "var(--clr-bg)" : "var(--clr-dark)";
+        const fromPage = window.location.pathname.split("/").pop() || "index.html";
+        cover.style.background = TRANSITION_COLORS[fromPage] ?? TRANSITION_COLOR_DEFAULT;
         gsap.fromTo(cover,
           { yPercent: 100 },
           {
@@ -111,58 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.ticker.lagSmoothing(0);
   }
 
-  const loaderEl = document.getElementById("loader");
-  const loaderNumEl = document.getElementById("loader-num");
-  const loaderBarEl = document.querySelector(".loader-bar");
-
-  // ── Loading Counter ──
-  gsap.to({ val: 0 }, {
-    val: 100,
-    duration: 1.4,
-    ease: "power2.out",
-    onUpdate: function () {
-      const v = Math.floor(this.targets()[0].val);
-      loaderNumEl.textContent = v;
-      loaderBarEl.style.width = v + "%";
-    },
-    onComplete: () => {
-      loaderNumEl.textContent = "100";
-      loaderBarEl.style.width = "100%";
-
-      // Slide loader up
-      gsap.to(loaderEl, {
-        yPercent: -100,
-        duration: 0.85,
-        ease: "expo.inOut",
-        delay: 0.1,
-        onComplete: () => loaderEl.remove(),
-      });
-
-      // Reveal hero
-      gsap.to(".hero", {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.35,
-      });
-
-      // Animate heading lines up row by row
-      gsap.from(".hero-line", {
-        yPercent: 110,
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.14,
-        delay: 0.5,
-      });
-    },
-  });
-
-  // Set hero start state for reveal
-  gsap.set(".hero", { opacity: 0, y: 40 });
-
   // ── Scroll Section Reveals ──
   gsap.utils.toArray(".work, .about, .testimonials, footer").forEach((el) => {
+    gsap.set(el, { opacity: 0, y: 60 });
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
@@ -173,9 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.75,
       ease: "power3.out",
     });
-    gsap.set(el, { opacity: 0, y: 60 });
   });
-
 
   // ── Project Image — bottom to top reveal ──
   gsap.utils.toArray(".slide-media").forEach((media) => {
@@ -205,154 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ── Testimonials Infinite Draggable Slider ──
-  const tViewport = document.getElementById("t-viewport");
-  const tTrackEl = document.getElementById("t-track");
-  const realCards = Array.from(document.querySelectorAll(".t-card"));
-  const tDots = document.querySelectorAll(".t-dot");
-
-  // Clone cards before and after originals for infinite loop
-  realCards.forEach(card => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    tTrackEl.appendChild(clone);
-  });
-  realCards.forEach(card => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    tTrackEl.prepend(clone);
-  });
-
-  function cardStride() {
-    const gap = parseFloat(getComputedStyle(tTrackEl).gap) || 16;
-    return realCards[0].offsetWidth + gap;
-  }
-
-  function getSetWidth() {
-    return realCards.length * cardStride();
-  }
-
-  // Start scrolled to the original set (past the prepended clones)
-  tViewport.scrollLeft = getSetWidth();
-
-  // ── Mouse drag ──
-  let isDragging = false;
-  let dragStartX = 0;
-  let dragScrollLeft = 0;
-
-  function snapToNearest() {
-    const sw = getSetWidth();
-    const stride = cardStride();
-    const delta = tViewport.scrollLeft - dragScrollLeft;
-    const threshold = stride * 0.2;
-
-    let normStart = dragScrollLeft;
-    if (normStart >= sw * 2) normStart -= sw;
-    else if (normStart < sw) normStart += sw;
-    const startIdx = Math.round((normStart - sw) / stride);
-
-    let targetIdx = startIdx;
-    if (delta > threshold) targetIdx = startIdx + 1;
-    else if (delta < -threshold) targetIdx = startIdx - 1;
-
-    const targetScroll = sw + targetIdx * stride;
-
-    gsap.to(tViewport, {
-      scrollLeft: targetScroll,
-      duration: 0.6,
-      ease: "expo.out",
-      onComplete: () => {
-        if (tViewport.scrollLeft >= sw * 2) tViewport.scrollLeft -= sw;
-        else if (tViewport.scrollLeft < 1) tViewport.scrollLeft += sw;
-        tViewport.classList.remove("is-grabbing");
-        syncDots();
-      },
-    });
-  }
-
-  // ── Mouse drag ──
-  tViewport.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    dragStartX = e.pageX - tViewport.offsetLeft;
-    dragScrollLeft = tViewport.scrollLeft;
-    tViewport.classList.add("is-grabbing");
-    e.preventDefault();
-  });
-
-  window.addEventListener("mouseup", () => {
-    if (!isDragging) return;
-    isDragging = false;
-    snapToNearest();
-  });
-
-  window.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    const x = e.pageX - tViewport.offsetLeft;
-    const walk = (x - dragStartX) * 1.4;
-    tViewport.scrollLeft = dragScrollLeft - walk;
-  });
-
-  // ── Touch drag ──
-  tViewport.addEventListener("touchstart", (e) => {
-    isDragging = true;
-    dragStartX = e.touches[0].pageX - tViewport.offsetLeft;
-    dragScrollLeft = tViewport.scrollLeft;
-    tViewport.classList.add("is-grabbing");
-  }, { passive: true });
-
-  tViewport.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - tViewport.offsetLeft;
-    const walk = (x - dragStartX) * 1.4;
-    tViewport.scrollLeft = dragScrollLeft - walk;
-  }, { passive: true });
-
-  tViewport.addEventListener("touchend", () => {
-    if (!isDragging) return;
-    isDragging = false;
-    snapToNearest();
-  });
-
-  // ── Dot click → scroll to original card ──
-  tDots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      const idx = parseInt(dot.dataset.idx);
-      const target = getSetWidth() + idx * cardStride();
-      tViewport.scrollTo({ left: target, behavior: "smooth" });
-    });
-  });
-
-  // ── Sync dots to current position ──
-  function syncDots() {
-    const sw = getSetWidth();
-    let sl = tViewport.scrollLeft;
-    // Normalize to original-set range
-    if (sl < sw) sl += sw;
-    if (sl >= sw * 2) sl -= sw;
-    const idx = Math.min(Math.floor((sl - sw) / cardStride()), realCards.length - 1);
-    tDots.forEach((dot, i) => dot.classList.toggle("t-dot--active", i === idx));
-  }
-
-  // ── Infinite reset on scroll end (not during drag) ──
-  let isResetting = false;
-  tViewport.addEventListener("scroll", () => {
-    if (isDragging || isResetting) return;
-    syncDots();
-    const sw = getSetWidth();
-    if (tViewport.scrollLeft >= sw * 2) {
-      isResetting = true;
-      tViewport.scrollLeft -= sw;
-      isResetting = false;
-    } else if (tViewport.scrollLeft < 1) {
-      isResetting = true;
-      tViewport.scrollLeft += sw;
-      isResetting = false;
-    }
-  }, { passive: true });
-
   // ── GSAP Scroll Text Animation ──
-  const textElements = document.querySelectorAll(".animate");
-  textElements.forEach((textElement) => {
+  document.querySelectorAll(".animate").forEach((textElement) => {
     const text = textElement.textContent;
     textElement.innerHTML = text
       .split("")
@@ -363,13 +173,198 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(chars, {
       scrollTrigger: {
         trigger: textElement,
-        start: "top 80%",
-        end: "bottom 40%",
-        scrub: 1.5,
+        start: "top 85%",
+        end: "top 20%",
+        scrub: 0.6,
       },
       color: "#B1AFAF",
-      stagger: 0.05,
+      opacity: 0.3,
+      stagger: 0.03,
       ease: "none",
     });
   });
+
+  // ── Index Page: Loader, Hero, Testimonials ──
+  const loaderEl = document.getElementById("loader");
+  if (loaderEl) {
+    const loaderNumEl = document.getElementById("loader-num");
+    const loaderBarEl = document.querySelector(".loader-bar");
+
+    gsap.set(".hero", { opacity: 0, y: 40 });
+
+    gsap.to({ val: 0 }, {
+      val: 100,
+      duration: 1.4,
+      ease: "power2.out",
+      onUpdate: function () {
+        const v = Math.floor(this.targets()[0].val);
+        loaderNumEl.textContent = v;
+        loaderBarEl.style.width = v + "%";
+      },
+      onComplete: () => {
+        loaderNumEl.textContent = "100";
+        loaderBarEl.style.width = "100%";
+
+        gsap.to(loaderEl, {
+          yPercent: -100,
+          duration: 0.85,
+          ease: "expo.inOut",
+          delay: 0.1,
+          onComplete: () => loaderEl.remove(),
+        });
+
+        gsap.to(".hero", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: 0.35,
+        });
+
+        gsap.from(".hero-line", {
+          yPercent: 110,
+          duration: 1,
+          ease: "power4.out",
+          stagger: 0.14,
+          delay: 0.5,
+        });
+      },
+    });
+
+    // ── Testimonials Infinite Draggable Slider ──
+    const tViewport = document.getElementById("t-viewport");
+    const tTrackEl = document.getElementById("t-track");
+    const realCards = Array.from(document.querySelectorAll(".t-card"));
+    const tDots = document.querySelectorAll(".t-dot");
+
+    realCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      tTrackEl.appendChild(clone);
+    });
+    realCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      tTrackEl.prepend(clone);
+    });
+
+    function cardStride() {
+      const gap = parseFloat(getComputedStyle(tTrackEl).gap) || 16;
+      return realCards[0].offsetWidth + gap;
+    }
+
+    function getSetWidth() {
+      return realCards.length * cardStride();
+    }
+
+    tViewport.scrollLeft = getSetWidth();
+
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragScrollLeft = 0;
+
+    function snapToNearest() {
+      const sw = getSetWidth();
+      const stride = cardStride();
+      const delta = tViewport.scrollLeft - dragScrollLeft;
+      const threshold = stride * 0.2;
+
+      let normStart = dragScrollLeft;
+      if (normStart >= sw * 2) normStart -= sw;
+      else if (normStart < sw) normStart += sw;
+      const startIdx = Math.round((normStart - sw) / stride);
+
+      let targetIdx = startIdx;
+      if (delta > threshold) targetIdx = startIdx + 1;
+      else if (delta < -threshold) targetIdx = startIdx - 1;
+
+      const targetScroll = sw + targetIdx * stride;
+
+      gsap.to(tViewport, {
+        scrollLeft: targetScroll,
+        duration: 0.6,
+        ease: "expo.out",
+        onComplete: () => {
+          if (tViewport.scrollLeft >= sw * 2) tViewport.scrollLeft -= sw;
+          else if (tViewport.scrollLeft < 1) tViewport.scrollLeft += sw;
+          tViewport.classList.remove("is-grabbing");
+          syncDots();
+        },
+      });
+    }
+
+    tViewport.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      dragStartX = e.pageX - tViewport.offsetLeft;
+      dragScrollLeft = tViewport.scrollLeft;
+      tViewport.classList.add("is-grabbing");
+      e.preventDefault();
+    });
+
+    window.addEventListener("mouseup", () => {
+      if (!isDragging) return;
+      isDragging = false;
+      snapToNearest();
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      const x = e.pageX - tViewport.offsetLeft;
+      const walk = (x - dragStartX) * 1.4;
+      tViewport.scrollLeft = dragScrollLeft - walk;
+    });
+
+    tViewport.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      dragStartX = e.touches[0].pageX - tViewport.offsetLeft;
+      dragScrollLeft = tViewport.scrollLeft;
+      tViewport.classList.add("is-grabbing");
+    }, { passive: true });
+
+    tViewport.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX - tViewport.offsetLeft;
+      const walk = (x - dragStartX) * 1.4;
+      tViewport.scrollLeft = dragScrollLeft - walk;
+    }, { passive: true });
+
+    tViewport.addEventListener("touchend", () => {
+      if (!isDragging) return;
+      isDragging = false;
+      snapToNearest();
+    });
+
+    tDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = parseInt(dot.dataset.idx);
+        const target = getSetWidth() + idx * cardStride();
+        tViewport.scrollTo({ left: target, behavior: "smooth" });
+      });
+    });
+
+    function syncDots() {
+      const sw = getSetWidth();
+      let sl = tViewport.scrollLeft;
+      if (sl < sw) sl += sw;
+      if (sl >= sw * 2) sl -= sw;
+      const idx = Math.min(Math.floor((sl - sw) / cardStride()), realCards.length - 1);
+      tDots.forEach((dot, i) => dot.classList.toggle("t-dot--active", i === idx));
+    }
+
+    let isResetting = false;
+    tViewport.addEventListener("scroll", () => {
+      if (isDragging || isResetting) return;
+      syncDots();
+      const sw = getSetWidth();
+      if (tViewport.scrollLeft >= sw * 2) {
+        isResetting = true;
+        tViewport.scrollLeft -= sw;
+        isResetting = false;
+      } else if (tViewport.scrollLeft < 1) {
+        isResetting = true;
+        tViewport.scrollLeft += sw;
+        isResetting = false;
+      }
+    }, { passive: true });
+  }
 });
