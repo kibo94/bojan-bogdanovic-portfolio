@@ -30,6 +30,14 @@ window.addEventListener("scroll", () => {
   nav.classList.toggle("scrolled", window.scrollY > 80);
 }, { passive: true });
 
+// ── Clear cover on back/forward navigation (bfcache restore) ──
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) {
+    const cover = document.getElementById("page-cover");
+    if (cover) gsap.set(cover, { yPercent: -100 });
+  }
+});
+
 // ── Main Init ──
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
