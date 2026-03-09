@@ -13,8 +13,8 @@
   --txt-grey-inv: rgba(255, 255, 255, 0.8);
 
   /* Border Radius */
-  --radius:    0px;
-  --radius-sm: 0px;
+  --radius:    4px;
+  --radius-sm: 4px;
 }
 
 *,
@@ -30,6 +30,10 @@ body {
   width: 100%;
   background: var(--clr-bg);
 
+}
+p{
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -86,6 +90,14 @@ nav {
   transition: opacity 0.2s ease;
 }
 
+.nav-links a.contact {
+  font-family: "Antonio", sans-serif;
+  padding: 8px 16px;
+background: var(--clr-dark);
+color: var(--txt-white);
+ 
+}
+
 .nav-links a:hover {
   opacity: 0.5;
 }
@@ -113,6 +125,10 @@ nav.scrolled .nav-links a {
 
 nav.scrolled .nav-hamburger span {
   background: var(--clr-bg);
+}
+nav.scrolled .nav-links a.contact {
+  background: var(--clr-bg);
+  color: var(--txt-black);
 }
 
 
@@ -161,6 +177,14 @@ nav.scrolled .nav-hamburger span {
   align-items: center;
   gap: 9px;
   
+}
+.hero-cpy {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--txt-black);
+  margin-top: 16px;
+  max-width: 359px;
 }
 
 .hero-tag strong {
@@ -590,19 +614,15 @@ p {
 
 /* ─── TESTIMONIALS ─── */
 .testimonials {
-  position: relative;
   width: 100%;
   background: var(--clr-dark);
   overflow: hidden;
-  padding: 176px 0;
+  padding:200px 0;
 }
 
 .testimonials .section-label {
-  position: absolute;
-  top: 40px;
   color: var(--txt-white);
-  margin: 0;
-  padding: 0;
+  margin-bottom: 40px;
 }
 
 .t-slider-wrap {
@@ -610,21 +630,13 @@ p {
 }
 
 .t-slider-viewport {
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  overflow: hidden;
   cursor: grab;
   user-select: none;
 }
 
-.t-slider-viewport::-webkit-scrollbar {
-  display: none;
-}
-
 .t-slider-viewport.is-grabbing {
   cursor: grabbing;
-  scroll-snap-type: none;
 }
 
 .t-track {
@@ -635,22 +647,25 @@ p {
 }
 
 .t-card {
-  flex: 0 0 calc(50vw - 48px);
-  scroll-snap-align: start;
+  flex: none;
   background: var(--clr-surface);
   border-radius: var(--radius);
-  padding: 44px 48px 44px;
+  padding: 28px 20px 28px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 360px;
+  position: relative;
 }
+
+
 
 .t-quote {
   display: block;
-  color: var(--txt-black);
-  margin-bottom: 16px;
-  line-height: 0;
+  font-family: "Antonio", sans-serif;
+  font-size: 118px;
+  line-height: 0.6;
+  color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  user-select: none;
 }
 
 .t-text {
@@ -660,8 +675,9 @@ p {
   line-height: 1.78;
   color: #1a1a1a;
   flex: 1;
-  width: 90%;
-  margin-bottom: 24px;
+  width: 100%;
+
+
   letter-spacing: 0;
 }
 
@@ -674,6 +690,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 4px;
+    margin-top: 40px;
 }
 
 .t-author {
@@ -693,30 +710,38 @@ p {
   letter-spacing: 0.08em;
 }
 
-.t-dots {
+.t-arrows {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
-  padding-top: 40px;
-  margin: 0 auto;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-top: 28px;
 }
 
-.t-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.25);
-  border: none;
+.t-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: white;
   cursor: pointer;
-  padding: 0;
-  transition: background 0.3s ease, width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  color: #fff;
 }
 
-.t-dot.t-dot--active {
-  background: var(--clr-bg);
-  width: 24px;
+.t-arrow svg {
+  width: 20px;
+  height: 16px;
+  color: var(--clr-dark);
+}
+
+.t-arrow:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 /* ─── FOOTER ─── */
@@ -1142,7 +1167,7 @@ p {
   }
 
   .t-card {
-    flex: 0 0 calc(100vw - 56px);
+    flex: 0 0 calc(100vw - 80px);
     padding: 32px 28px;
     min-height: 0;
   }
@@ -1158,8 +1183,13 @@ p {
     width: 100%;
   }
 
-  .t-dots {
-    padding-top: 28px;
+  .t-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .testimonials .section-label {
+    margin-bottom: 24px;
   }
 
   .footer-heading {

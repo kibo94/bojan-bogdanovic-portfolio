@@ -28,7 +28,7 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="work.html">My Work</a></li>
           <li><a href="about.html">About me</a></li>
-          <li><a href="#contact">Contact me</a></li>
+          <li><a class="contact" href="#contact">Contact me</a></li>
         </ul>
         <button
           class="nav-hamburger"
@@ -82,6 +82,9 @@
               ><span class="hero-line">&amp; Designer</span></span
             >
           </h1>
+          <p class="hero-cpy">
+            I help small busniess and startups to grow and make full potentional
+          </p>
         </div>
         <div class="hero-v2-right">
           <img src="me.png" alt="Bojan Bogdanović" class="hero-v2-img" />
@@ -185,16 +188,13 @@
           <div class="t-slider-viewport" id="t-viewport">
             <div class="t-track" id="t-track">
               <div class="t-card">
+                <span class="t-quote">&ldquo;</span>
                 <p class="t-text">
-                  I had the pleasure of working with Bojan on several projects —
-                  he is an exceptional front-end developer.
-                  <mark
-                    >His expertise across web and mobile platforms is
-                    consistently innovative,</mark
-                  >
-                  and he always delivers clean, scalable code. Beyond his
-                  technical skills, he communicates clearly and adapts quickly
-                  to any challenge.
+                  I had the pleasure of working with Bojan on several projects.
+                  <mark>His expertise across web and mobile platforms is
+                  consistently innovative,</mark> and he always delivers clean,
+                  scalable code. His communication is clear and he adapts
+                  quickly to any challenge.
                 </p>
                 <div class="t-author-block">
                   <div class="t-author">Dejan Krunić</div>
@@ -203,15 +203,13 @@
               </div>
 
               <div class="t-card">
+                <span class="t-quote">&ldquo;</span>
                 <p class="t-text">
-                  Working with Bojan was a seamless experience from start to
-                  finish.
-                  <mark
-                    >He took our vision and transformed it into a polished,
-                    performant product that exceeded expectations.</mark
-                  >
-                  His attention to detail and commitment to quality are second
-                  to none — exactly the kind of developer you want on your team.
+                  Working with Bojan was seamless from start to finish.
+                  <mark>He took our vision and transformed it into a polished,
+                  performant product that exceeded expectations.</mark>
+                  His attention to detail and commitment to quality are exactly
+                  what you want in a developer.
                 </p>
                 <div class="t-author-block">
                   <div class="t-author">Marija Petrović</div>
@@ -220,14 +218,13 @@
               </div>
 
               <div class="t-card">
+                <span class="t-quote">&ldquo;</span>
                 <p class="t-text">
-                  Bojan brought both technical depth and creative thinking to
-                  every task. He understood our goals from day one and
-                  <mark
-                    >consistently delivered beyond what was asked — a rare
-                    combination of skill, reliability, and positive energy</mark
-                  >
-                  on every project.
+                  Bojan brought technical depth and creative thinking to every
+                  task. He understood our goals from day one and
+                  <mark>consistently delivered beyond what was asked — a rare
+                  combination of skill, reliability, and positive energy</mark>
+                  throughout every project.
                 </p>
                 <div class="t-author-block">
                   <div class="t-author">Stefan Nikolić</div>
@@ -236,14 +233,13 @@
               </div>
 
               <div class="t-card">
+                <span class="t-quote">&ldquo;</span>
                 <p class="t-text">
-                  <mark
-                    >Bojan's ability to turn complex requirements into elegant,
-                    user-friendly interfaces is impressive.</mark
-                  >
+                  <mark>Bojan's ability to turn complex requirements into
+                  elegant, user-friendly interfaces is impressive.</mark>
                   He works with precision and speed, and his eye for design
-                  details makes every project stand out. Highly recommended for
-                  any ambitious project.
+                  details makes every project stand out. Highly recommended
+                  for any ambitious project.
                 </p>
                 <div class="t-author-block">
                   <div class="t-author">Ana Jovanović</div>
@@ -253,27 +249,38 @@
             </div>
           </div>
         </div>
-        <div class="t-dots" id="t-dots">
-          <button
-            class="t-dot t-dot--active"
-            data-idx="0"
-            aria-label="Testimonial 1"
-          ></button>
-          <button
-            class="t-dot"
-            data-idx="1"
-            aria-label="Testimonial 2"
-          ></button>
-          <button
-            class="t-dot"
-            data-idx="2"
-            aria-label="Testimonial 3"
-          ></button>
-          <button
-            class="t-dot"
-            data-idx="3"
-            aria-label="Testimonial 4"
-          ></button>
+        <div class="t-arrows">
+          <button class="t-arrow" id="t-prev" aria-label="Previous testimonial">
+            <svg
+              viewBox="0 0 24 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="transform: scaleX(-1)"
+            >
+              <path
+                d="M1 10H23M14 1L23 10L14 19"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button class="t-arrow" id="t-next" aria-label="Next testimonial">
+            <svg
+              viewBox="0 0 24 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 10H23M14 1L23 10L14 19"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -296,7 +303,7 @@
             >
               <path
                 d="M81.6878 71.2706C80.6922 71.27 79.7375 70.8742 79.0335 70.1702C78.3294 69.4661 77.9336 68.5114 77.933 67.5158L77.9286 12.8271L6.41402 84.3417C5.70941 85.0463 4.75376 85.4421 3.75729 85.4421C2.76083 85.4421 1.80518 85.0463 1.10057 84.3417C0.395963 83.6371 0.000120037 82.6814 0.000120024 81.685C0.000120012 80.6885 0.395965 79.7329 1.10057 79.0282L72.6151 7.51369L17.9265 7.50926C16.9536 7.47492 16.032 7.06428 15.3558 6.36387C14.6797 5.66345 14.3019 4.72794 14.3019 3.75442C14.3019 2.78091 14.6797 1.8454 15.3558 1.14498C16.032 0.444564 16.9536 0.0339295 17.9265 -0.00041289L81.6878 -0.000410828C82.6835 0.000208743 83.6382 0.396004 84.3422 1.10004C85.0463 1.80407 85.4421 2.75877 85.4427 3.75443L85.4427 67.5158C85.4421 68.5114 85.0463 69.4661 84.3422 70.1702C83.6382 70.8742 82.6835 71.27 81.6878 71.2706Z"
-                fill="currentColor"
+                fill="black"
               />
             </svg>
           </a>
