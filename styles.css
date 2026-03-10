@@ -235,7 +235,7 @@ nav.scrolled .nav-links a.contact {
   height: 85vh;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(100%);
+
   display: block;
 }
 
