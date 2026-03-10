@@ -739,10 +739,7 @@ p {
   color: var(--clr-dark);
 }
 
-.t-arrow:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.7);
-}
+
 
 /* ─── FOOTER ─── */
 .footer {
