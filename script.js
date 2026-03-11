@@ -5,9 +5,9 @@
 // ─────────────────────────────────────────────
 const TRANSITION_COLORS = {
   "index.html": "var(--clr-dark)",   // leaving Home
-  "work.html":  "var(--clr-bg)",     // leaving My Work
+  "work.html": "var(--clr-bg)",     // leaving My Work
   "about.html": "var(--clr-bg)",     // leaving About
-  "rtt.html":   "var(--clr-dark)",   // leaving RTT project
+  "rtt.html": "var(--clr-dark)",   // leaving RTT project
 };
 // Fallback color if the page isn't listed above
 const TRANSITION_COLOR_DEFAULT = "var(--clr-dark)";
@@ -227,7 +227,12 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 1,
           ease: "power4.out",
           stagger: 0.14,
-          delay: 0.5,
+          delay: 0,
+          onComplete: () => {
+            document.querySelectorAll(".hero-line-wrap").forEach(el => {
+              el.style.overflow = "visible";
+            });
+          },
         });
       },
     });
