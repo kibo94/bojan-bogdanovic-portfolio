@@ -1040,7 +1040,7 @@ p {
 
   .hero-v2-left {
     flex: none;
-    height: calc(40vh - 70px);
+    height: calc(50vh - 70px);
   
     gap: 8px;
   }
