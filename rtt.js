@@ -53,18 +53,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ── Section fade-up reveals ──
-  gsap.utils.toArray(".rtt-overview, .rtt-compare, .rtt-gallery, footer").forEach((el) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
+  // ── Mobile showcase staggered reveal ──
+  gsap.utils.toArray(".rtt-mobile-img").forEach((img, i) => {
+    gsap.to(img, {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
       ease: "power3.out",
+      delay: i * 0.1,
       scrollTrigger: {
-        trigger: el,
-        start: "top 88%",
+        trigger: ".rtt-mobile-grid",
+        start: "top 85%",
         once: true,
       },
     });
   });
+
 });

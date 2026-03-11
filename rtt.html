@@ -130,29 +130,47 @@
         <!-- ─── 3 IMAGES BELOW ─── -->
         <div class="rtt-gallery-grid">
           <div class="rtt-gallery-item" id="rtt-gal-1">
-            <img
-              src="realtimetraffic/rtt-image-2.png"
-              alt="RTT old website"
-              class="rtt-gallery-img"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcset="realtimetraffic/mobile/image1.png" />
+              <img
+                src="realtimetraffic/rtt-image-2.png"
+                alt="RTT old website"
+                class="rtt-gallery-img"
+              />
+            </picture>
           </div>
           <div class="rtt-gallery-item" id="rtt-gal-2">
-            <img
-              src="realtimetraffic/rtt-mobile-2.png"
-              alt="RTT new website"
-              class="rtt-gallery-img"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcset="realtimetraffic/mobile/image2.png" />
+              <img
+                src="realtimetraffic/rtt-mobile-2.png"
+                alt="RTT new website"
+                class="rtt-gallery-img"
+              />
+            </picture>
           </div>
           <div class="rtt-gallery-item" id="rtt-gal-3">
+            <picture>
+              <source media="(max-width: 768px)" srcset="realtimetraffic/mobile/image3.png" />
+              <img
+                src="realtimetraffic/rtt-mobile-1.png"
+                alt="RTT mobile view"
+                class="rtt-gallery-img"
+              />
+            </picture>
+          </div>
+          <div class="rtt-gallery-item rtt-gallery-item--mobile-only" id="rtt-gal-4">
             <img
-              src="realtimetraffic/rtt-mobile-1.png"
-              alt="RTT mobile view"
+              src="realtimetraffic/mobile/image4.png"
+              alt="RTT mobile view 4"
               class="rtt-gallery-img"
             />
           </div>
         </div>
       </div>
     </section>
+
+   
 
     <!-- ─── FOOTER ─── -->
     <footer class="footer">
@@ -227,6 +245,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
+    <script src="script.js"></script>
     <script src="rtt.js"></script>
   </body>
 </html>

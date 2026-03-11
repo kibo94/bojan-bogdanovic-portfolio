@@ -189,13 +189,55 @@
   width: 100%;
   height: 100%;
   display: block;
-
+  object-fit: cover;
   clip-path: inset(100% 0 0 0);
   transition: transform 0.5s ease;
 }
 
+/* 4th item: mobile images only, hidden on desktop */
+.rtt-gallery-item--mobile-only {
+  display: none;
+}
+
 .rtt-gallery-item:hover .rtt-gallery-img {
   transform: scale(1.03);
+}
+
+/* ════════════════════════════════════════
+   6. MOBILE SHOWCASE
+════════════════════════════════════════ */
+.rtt-mobile {
+  background: var(--clr-dark);
+  padding: 0 0 100px;
+}
+
+.rtt-mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.rtt-mobile-item {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.rtt-mobile-item:nth-child(even) {
+  margin-top: 48px;
+}
+
+.rtt-mobile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.5s ease;
+}
+
+.rtt-mobile-item:hover .rtt-mobile-img {
+  transform: translateY(-6px);
 }
 
 /* ════════════════════════════════════════
@@ -239,6 +281,18 @@
 ════════════════════════════════════════ */
 /* ── Tablet ── */
 @media (max-width: 768px) {
+  .rtt-mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .rtt-mobile-item:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .rtt-mobile-item:nth-child(odd) {
+    margin-top: 32px;
+  }
   .rtt-hero {
     padding-top: 110px;
     padding-bottom: 60px;
@@ -267,29 +321,79 @@
   .rtt-gallery-item {
     height: 280px;
   }
+
+  /* Show 4th mobile-only item on tablet/mobile */
+  .rtt-gallery-item--mobile-only {
+    display: block;
+  }
 }
  
 
 /* ── Mobile ── */
 @media (max-width: 480px) {
+  .rtt-hero {
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+
+  .rtt-hero-sub {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
   .rtt-hero-tabs {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
-  }
-   .rtt-tab-label {
-    font-size: 22px;
+    gap: 20px;
   }
 
-  /* Mobile: all images stacked, equal height */
+  .rtt-tab-label {
+    font-size: 20px;
+  }
+
+  .rtt-tab-value {
+    font-size: 15px;
+  }
+
+  .rtt-overview {
+    padding: 40px 0 36px;
+  }
+
+  .rtt-overview-text {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* Fullshot: full width on mobile */
+  .rtt-fullshot-img {
+    width: 100%;
+  }
+
+  .rtt-compare {
+    padding: 48px 0 48px;
+  }
+
+  .rtt-compare-heading {
+    font-size: 28px;
+  }
+
+  .rtt-compare-text {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* Gallery: 2-col, first item full width, rest in pairs */
   .rtt-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
-  .rtt-gallery-item,
   .rtt-gallery-item:first-child {
-    grid-column: auto;
-    height: 260px;
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+
+  .rtt-gallery-item {
+    height: 220px;
   }
 }
