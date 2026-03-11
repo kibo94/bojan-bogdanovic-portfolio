@@ -158,7 +158,7 @@ nav.scrolled .nav-links a.contact {
 }
 
 .hero-v2-left {
-  flex: 0 0 50%;
+  flex: 0 0 48%;
   min-width: 0;
   overflow: hidden;
   display: flex;
@@ -223,7 +223,7 @@ nav.scrolled .nav-links a.contact {
 }
 
 .hero-v2-right {
-  flex: 0 0 50%;
+  flex: 0 0 52%;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -234,7 +234,9 @@ nav.scrolled .nav-links a.contact {
   width: 100%;
   height: 85vh;
   object-fit: cover;
-  object-position: center top;
+  object-position: 78%;
+  position: relative;
+  z-index: 3; 
 
   display: block;
 }
@@ -1222,6 +1224,34 @@ p {
     width: 90%;
   }
 }
+
+
+@media  (min-height: 390px) {
+.hero ,.hero-v2-left, .hero-v2-right {
+  height: auto;
+}
+.hero-v2-inner {
+  flex-direction: column;
+}
+.hero-v2-img {
+  height: auto;
+}
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-v2-inner {
+    padding-top: 60px;
+  }
+
+   .hero-heading {
+    font-size: clamp(32px, 18vw, 64px);
+  }
+
+   .hero-tag {
+    font-size: 12px;
+   }
+
 /* ─── RESPONSIVE: 480px ─── */
 @media (max-width: 480px) {
   .project-title {
@@ -1229,6 +1259,10 @@ p {
   }
   .hero-heading{
     font-size: 64px;
+  }
+  .hero-tag {
+   
+width: 300px;  
   }
 
   .animate {
