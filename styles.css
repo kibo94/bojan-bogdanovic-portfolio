@@ -1250,7 +1250,7 @@ p {
     font-size: clamp(32px, 10vw, 48px);
   }
   .hero-heading{
-    font-size: 64px;
+    font-size: 50px;
   }
   .hero-tag {
    
