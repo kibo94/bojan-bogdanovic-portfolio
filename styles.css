@@ -1275,6 +1275,15 @@ width: 300px;
   .work-list {
     gap: 40px;
   }
+
+  .t-author-block {
+    margin-top: 0px;
+  }
+
+  .t-quote {
+    font-size: 80px;
+    line-height: 0.6;
+  }
 }
 
 
