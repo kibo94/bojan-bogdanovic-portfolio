@@ -52,6 +52,22 @@ body {
   padding: 100px 0 100px;
   position: relative;
 }
+.typing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#type-text{
+  font-size: 40px;
+}
+
+#pipe {
+  height: 25px;
+  width: 2px;
+  background: black;
+  display: inline-block;
+}
 
 /* ─── NAV ─── */
 nav {
@@ -989,7 +1005,7 @@ p {
     font-size: 17px;
   }
   .hero-heading {
-    font-size: 96px;
+    font-size: 80px;
   }
 
   .work-item-info {
@@ -1015,7 +1031,6 @@ p {
   }
   .hero-v2-img {
     height: 80vh;
-   
   }
   .work {
     padding: 100px 0;
@@ -1057,7 +1072,7 @@ p {
 
   .hero-v2-left {
     flex: none;
-    height: calc(40vh - 70px);
+    height: auto;
 
     gap: 8px;
   }
@@ -1308,6 +1323,13 @@ p {
     text-align: left;
     width: 100%;
   }
+
+#type-text{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+
   .work {
     padding: 115px 0;
   }

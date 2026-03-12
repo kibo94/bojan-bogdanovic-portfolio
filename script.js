@@ -9,6 +9,8 @@ const TRANSITION_COLORS = {
   "about.html": "var(--clr-bg)",     // leaving About
   "rtt.html": "var(--clr-dark)",   // leaving RTT project
 };
+
+const aboutSection = document.getElementById("about");
 // Fallback color if the page isn't listed above
 const TRANSITION_COLOR_DEFAULT = "var(--clr-dark)";
 // ─────────────────────────────────────────────
@@ -16,6 +18,8 @@ const TRANSITION_COLOR_DEFAULT = "var(--clr-dark)";
 // ── Mobile Menu Toggle ──
 const hamburger = document.getElementById("nav-hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
+
+const pipe = document.getElementById("pipe");
 
 hamburger.addEventListener("click", () => {
   const isOpen = hamburger.classList.contains("open");
@@ -52,10 +56,41 @@ window.addEventListener("pageshow", (e) => {
     if (cover) gsap.set(cover, { yPercent: -100 });
   }
 });
+const text = "Hello, I'm Bojan, a Frontend Developer.";
+
+// let count = 0;
+function typingAnimation() {
+  let typeTextEl = document.getElementById("type-text");
+  for (let i = 0; i < text.length; i++) {
+    setTimeout(() => {
+      if (text.length > typeTextEl.textContent.length) {
+        typeTextEl.textContent += text[i];
+      }
+      if (text.length == typeTextEl.textContent.length + 1) {
+        pipe.style.opacity = "0"
+      }
+    }, 80 * i);
+  }
+  pipe.style.opacity = pipe.style.opacity === "1" ? "0" : "1";
+}
+
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      typingAnimation();      // Run animation
+      observer.unobserve(aboutSection); // Run only once
+    }
+  });
+}, { threshold: 0.5 }); // Trigger when 50% of section is visible
+
+observer.observe(aboutSection);
+
 
 // ── Main Init ──
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
+
 
   // ── Page Transition Cover ──
   const cover = document.createElement("div");
@@ -77,6 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // index.html: loader already handles entrance, hide cover immediately
     gsap.set(cover, { yPercent: -100 });
   }
+
+
 
   // ── Exit animation: slide cover in from bottom, then navigate ──
   document.querySelectorAll("a[href]").forEach((link) => {
