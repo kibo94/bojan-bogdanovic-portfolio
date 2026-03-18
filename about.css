@@ -1,6 +1,17 @@
 /* Sections hidden until loader exits */
-.hero, .work, .about, .testimonials, footer {
+.hero,
+.work,
+.about,
+.testimonials,
+footer {
   opacity: 1;
+}
+
+/* ─── ABOUT TEXT CONTAINER (887px, bio & photos-intro only) ─── */
+.about-text-wrap {
+  max-width: 887px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 /* White page transition cover on about page */
@@ -34,7 +45,7 @@
 .about-hero {
   display: flex;
   align-items: center;
-  justify-content: center ;
+  justify-content: center;
   gap: 120px;
   overflow: hidden;
   padding-top: 120px;
@@ -50,30 +61,24 @@
 }
 
 .about-hero-center {
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .about-hero-title {
-  font-family: "Antonio", sans-serif;
-  font-weight: 700;
   font-size: 170px;
-  text-transform: uppercase;
-  line-height: 0.92;
   letter-spacing: -0.025em;
   color: var(--txt-black);
-  margin: 0;
   white-space: nowrap;
 }
 
 /* ─── BIO TEXT SECTION ─── */
 .about-bio {
-padding-bottom: 120px;
+  padding-bottom: 120px;
 }
 
-.about-bio .container {
+.about-bio .about-text-wrap {
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -81,51 +86,37 @@ padding-bottom: 120px;
 
 .about-bio p,
 .photos-intro-text p {
-  font-family: "Inter", sans-serif;
   font-size: 40px;
-  line-height: 1.25;
-  color: var(--txt-black);
-  margin: 0;
-  font-weight: 400;
-  max-width: 100%;
+  line-height: 48px;
+  letter-spacing: -3%;
+  font-weight: 500;
 }
 .about-grid {
   padding-bottom: 100px;
 }
 
-.bio-left {
-  align-self: flex-start;
-  text-align: left;
-  width: 50%;
-}
-
+.bio-left,
 .bio-right {
-  align-self: flex-end;
+  align-self: center;
   text-align: left;
-    width: 50%;
+  width: 100%;
+  max-width: 887px;
 }
 
 .photos-intro-heading {
-  font-family: "Antonio", sans-serif;
-  font-weight: 700;
   font-size: 120px;
-  line-height: 0.92;
-  text-transform: uppercase;
   letter-spacing: -0.025em;
-  width:300px;
+  width: 300px;
   color: var(--txt-black);
-  margin: 0 auto ;
+  margin: 0 auto;
   text-align: center;
 }
-
 
 .about-photos-intro .container {
   display: flex;
   flex-direction: column;
   gap: 56px;
 }
-
-
 
 .photos-intro-text {
   display: flex;
@@ -142,7 +133,6 @@ padding-bottom: 120px;
 
 /* ─── ABOUT PHOTO GRID ─── */
 
-
 .about-grid-group {
   margin-bottom: 64px;
 }
@@ -152,12 +142,11 @@ padding-bottom: 120px;
 }
 
 .about-grid-group-label {
-  font-family: "Antonio", sans-serif;
-  font-size: 18px;
+  font-family: "Antonio", sans-serif; /* override p → Inter */
   text-transform: uppercase;
-
   color: black;
   margin-bottom: 16px;
+  max-width: none;
 }
 
 .about-grid-row {
@@ -167,7 +156,9 @@ padding-bottom: 120px;
   margin-bottom: 10px;
 }
 
-.about-grid-row:last-child { margin-bottom: 0; }
+.about-grid-row:last-child {
+  margin-bottom: 0;
+}
 
 .about-grid-item {
   overflow: hidden;
@@ -180,7 +171,9 @@ padding-bottom: 120px;
   object-fit: cover;
   display: block;
 
-  transition: filter 0.5s ease, transform 0.55s ease;
+  transition:
+    filter 0.5s ease,
+    transform 0.55s ease;
 }
 
 .about-grid-item:hover img {
@@ -193,19 +186,22 @@ padding-bottom: 120px;
   height: 800px;
 }
 
-@media (max-width:1920px) {
-  .about-grid-item { height: 600px; }
+@media (max-width: 1920px) {
+  .about-grid-item {
+    height: 600px;
+  }
 }
 
-@media (max-width:1440px) {
-  .about-grid-item { height: 500px; }
+@media (max-width: 1440px) {
+  .about-grid-item {
+    height: 500px;
+  }
 }
-  
-  
-
 
 @media (max-width: 1200px) {
-  .photos-intro-heading { font-size: 100px; }
+  .photos-intro-heading {
+    font-size: 100px;
+  }
   .about-hero {
     flex-direction: column;
     justify-content: flex-start;
@@ -214,58 +210,95 @@ padding-bottom: 120px;
     padding-top: 100px;
     padding-bottom: 40px;
   }
-    .bio-right , .bio-left {
-      justify-content: stretch;
-      width: 100%;
-    }
-  .about-hero-photo { width: clamp(100px, 28vw, 180px); height: clamp(100px, 28vw, 180px); }
-  .about-hero-title { font-size: clamp(52px, 12vw, 100px); white-space: normal; text-align: center; }
-  .about-bio { padding-bottom: 80px; }
-  .photos-intro-text { margin-top: 80px; margin-bottom: 40px; }
-  .about-grid-item { height: 400px; }
+  .bio-right,
+  .bio-left {
+    justify-content: stretch;
+    width: 100%;
+  }
+  .about-hero-photo {
+    width: clamp(100px, 28vw, 180px);
+    height: clamp(100px, 28vw, 180px);
+  }
+  .about-hero-title {
+    font-size: clamp(52px, 12vw, 100px);
+    white-space: normal;
+    text-align: center;
+  }
+  .about-bio {
+    padding-bottom: 80px;
+  }
+  .photos-intro-text {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+  .about-grid-item {
+    height: 400px;
+  }
 }
 
-
-
-
-
 @media (max-width: 768px) {
-  
+  .about-text-wrap {
+    padding: 0 20px;
+  }
+
   .about-photos-intro {
     gap: 32px;
+  }
+  .about-bio .about-text-wrap {
+    gap: 20px;
+  }
+  .photos-intro-text {
+    margin-top: 40px;
+  }
+  .photos-intro-heading {
+    font-size: 40px;
   }
 
   .about-bio p,
   .photos-intro-text p {
-    max-width: 100%;
-    font-size: 28px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
   }
 
   .bio-right {
-    align-self: flex-start;
+    align-self: center;
     text-align: left;
     width: 100%;
   }
   .photos-intro-heading {
     font-size: 80px;
-   
-
   }
 
-    .about-bio { padding-bottom: 60px; }
-  .about-grid-item { height: 300px; }
+  .about-bio {
+    padding-bottom: 60px;
+  }
+  .about-grid-item {
+    height: 300px;
+  }
 }
-
 
 @media (max-width: 600px) {
   .photos-intro-text p {
     font-size: 24px;
+    line-height: 30px;
   }
-  .photos-intro-text {
-    margin-top: 
-    0px; }
-    .about-bio { padding-bottom: 40px; }
-  .about-grid-row { grid-template-columns: 1fr; }
-  .about-grid-item { height: 300px; }
-  .photos-intro-heading { font-size: 60px; }
+
+  .about-bio p {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .about-bio {
+    padding-bottom: 40px;
+  }
+  .about-grid-row {
+    grid-template-columns: 1fr;
+  }
+  .about-grid-item {
+    height: 300px;
+  }
+  .photos-intro-heading {
+    font-size: 40px;
+  }
 }

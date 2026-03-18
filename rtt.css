@@ -27,11 +27,7 @@
 }
 
 .rtt-hero-title {
-  font-family: "Antonio", sans-serif;
-  font-weight: 700;
   font-size: clamp(64px, 11vw, 180px);
-  line-height: 0.92;
-  text-transform: uppercase;
   letter-spacing: -0.03em;
   color: var(--txt-white);
   margin: 0 0 24px;
@@ -40,12 +36,8 @@
 }
 
 .rtt-hero-sub {
-  font-family: "Inter", sans-serif;
-  font-size: 25px;
-  line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
   margin: 0 0 40px;
-  
 }
 
 .rtt-hero-tabs {
@@ -61,15 +53,12 @@
 }
 
 .rtt-tab-label {
-  font-family: "Antonio", sans-serif;
   font-size: 28px;
   color: var(--txt-white);
 }
 
 .rtt-tab-value {
-  font-family: "Antonio", sans-serif;
-  font-size: 18px;
-
+  font-size: var(--fs-base);
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -91,12 +80,8 @@
 }
 
 .rtt-overview-text {
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
   line-height: 1.7;
   color: white;
-  margin: 0;
-  width: 6543x;
 }
 
 /* ════════════════════════════════════════
@@ -136,22 +121,15 @@
 }
 
 .rtt-compare-heading {
-  font-family: "Antonio", sans-serif;
-  font-weight: 700;
   font-size: clamp(28px, 3vw, 44px);
   line-height: 1;
-  text-transform: uppercase;
   color: var(--txt-white);
   margin: 0 0 16px;
 }
 
 .rtt-compare-text {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
   line-height: 1.65;
-  color:white;
-  width: 90%;
-
+  color: white;
 }
 
 .rtt-compare-img-wrap {
@@ -345,10 +323,9 @@
   }
 
   .rtt-hero-sub {
-    font-size: 16px;
+    font-size: 18px;
     width: 250px;
     margin-bottom: 16px;
-        font-size: 16px;
   }
 
   .rtt-hero-tabs {
@@ -370,7 +347,7 @@
   }
 
   .rtt-overview-text {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.65;
   }
 
@@ -388,7 +365,7 @@
   }
 
   .rtt-compare-text {
-    font-size: 14px;
+    font-size: 18px;
     width: 100%;
   }
 

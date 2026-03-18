@@ -23,7 +23,9 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="work.html">My Work</a></li>
           <li><a href="about.html" class="nav-active">About me</a></li>
-          <li><a href="index.html#contact">Contact me</a></li>
+          <li>
+            <a class="contact" href="index.html#contact">schedule a call</a>
+          </li>
         </ul>
         <button
           class="nav-hamburger"
@@ -53,8 +55,8 @@
     <!-- ─── HERO ROW: images + heading ─── -->
     <section class="about-hero container">
       <img
-        src="./holly2.jpeg"
-        alt="Urban street scene"
+        src="./image.png"
+        alt="Bojan Bogdanović"
         class="about-hero-photo"
         id="hero-photo-left"
       />
@@ -71,19 +73,18 @@
 
     <!-- ─── BIO TEXT ─── -->
     <section class="about-bio">
-      <div class="container">
-        <p class="bio-left">
-          I,m Bojan Bogdanovic, a 31 years old frontend developer and designer
-          based in Serbia. I consider myself a hardworking and dedicated person,
-          guided by faith and always ready to bring a bit of humor into any
-          moment.
+      <div class="about-text-wrap">
+        <p class="bio-left text-body">
+          I’m Bojan Bogdanovic 31 years-old frontend developer and designer
+          based in Čačak, Serbia. I consider myself a hardworking and dedicated
+          person, guided by faith.
         </p>
-        <p class="bio-right">
+        <p class="bio-right text-body">
           I love traveling, exploring new places and cultures, and I especially
           enjoy capturing meaningful moments through photography - whether it's
           nature, cities, or spontaneous scenes along the way.
         </p>
-        <p class="bio-left">
+        <p class="bio-left text-body">
           At my core, I try to live simply, honestly, and with purpose, always
           working on myself and the goals I set.
         </p>
@@ -92,16 +93,16 @@
 
     <!-- ─── PHOTOS INTRO ─── -->
     <section class="about-photos-intro">
-      <div class="container">
+      <div class="about-text-wrap">
         <h2 class="photos-intro-heading">Photos Are My Hobby</h2>
         <div class="photos-intro-text">
-          <p class="bio-left">
+          <p class="bio-left text-body">
             I've been enjoying every spontaneous shot — and happily sharing
             those moments with others. The photos I've shared here reflect who I
             am genuine, spontaneous, and someone who loves preserving meaningful
             moments.
           </p>
-          <p class="bio-right">
+          <p class="bio-right text-body">
             I truly enjoy capturing beautiful scenes in nature, cities, and
             sacred places. I discovered this creative side of myself not long
             ago, and ever since it has become a true passion I carry everywhere
@@ -254,6 +255,32 @@
 
         // Clear any opacity/transform set by script.js scroll reveals
         gsap.set("footer", { clearProps: "opacity,y,transform" });
+
+        // ── Bio & photos-intro: overflow-from-bottom reveal (same as hero headings) ──
+        gsap.registerPlugin(ScrollTrigger);
+        document
+          .querySelectorAll(".about-bio p, .photos-intro-text p")
+          .forEach((p) => {
+            const wrap = document.createElement("div");
+            wrap.style.cssText = "overflow:hidden;display:block;";
+            p.parentNode.insertBefore(wrap, p);
+            wrap.appendChild(p);
+
+            gsap.fromTo(
+              p,
+              { yPercent: 110 },
+              {
+                yPercent: 0,
+                duration: 1.1,
+                ease: "power4.out",
+                scrollTrigger: {
+                  trigger: wrap,
+                  start: "top 92%",
+                  once: true,
+                },
+              },
+            );
+          });
       });
     </script>
   </body>

@@ -18,24 +18,18 @@
 }
 
 .work-page-label {
-  font-family: "Antonio", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   text-transform: uppercase;
   color: var(--txt-grey);
   margin: 0;
-  font-size: 20px;
 }
 
 .work-page-title {
   opacity: 0;
-  font-family: "Antonio", sans-serif;
-  font-weight: 700;
   font-size: clamp(80px, 12vw, 200px);
   line-height: 0.88;
-  text-transform: uppercase;
   letter-spacing: -0.03em;
   color: var(--txt-black);
-  margin: 0;
 }
 
 /* ─── WORK PAGE LIST ─── */
