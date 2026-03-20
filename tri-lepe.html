@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Tri Lepe — Bojan Bogdanović</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="tri-lepe.css" />
+  </head>
+  <body class="tl-page">
+    <!-- ─── NAV ─── -->
+    <nav id="main-nav">
+      <div class="container nav-content">
+        <a href="index.html" class="nav-logo" id="nav-logo">Bojan Bogdanović</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="work.html">My Work</a></li>
+          <li><a href="about.html">About me</a></li>
+          <li>
+            <a class="contact" href="index.html#contact">schedule a call</a>
+          </li>
+        </ul>
+        <button
+          class="nav-hamburger"
+          id="nav-hamburger"
+          aria-label="Toggle menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="work.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+        >My Work</a
+      >
+      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+        >About me</a
+      >
+      <a
+        href="index.html#contact"
+        class="mobile-menu-link"
+        onclick="closeMobileMenu()"
+        >Contact me</a
+      >
+    </div>
+
+    <!-- ─── 1. HERO ─── -->
+    <section class="tl-hero">
+      <div class="container">
+        <h1 class="tl-hero-title" id="tl-title">Tri Lepe</h1>
+        <p class="tl-hero-sub text-body">
+          A delivery application for fast, reliable service — all in one place.
+        </p>
+        <div class="tl-hero-tabs">
+          <div class="tl-tab">
+            <span class="tl-tab-label">Year</span>
+            <span class="tl-tab-value">2025</span>
+          </div>
+          <div class="tl-tab">
+            <span class="tl-tab-label">Designed by</span>
+            <span class="tl-tab-value">Me</span>
+          </div>
+          <div class="tl-tab">
+            <span class="tl-tab-label">Platform</span>
+            <span class="tl-tab-value">iOS &amp; Android</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 2. OVERVIEW ─── -->
+    <section class="tl-overview">
+      <div class="container">
+        <div class="tl-overview-inner">
+          <p class="tl-overview-text text-body">
+            Our delivery application allows you to easily and quickly order your
+            favorite products, track your orders in real time and enjoy fast and
+            reliable service — all in one place.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 3. FULL-WIDTH SCREENSHOT ─── -->
+    <section class="tl-fullshot container">
+      <div class="tl-fullshot-wrap" id="tl-fullshot">
+        <img src="tri-lepe.png" alt="Tri Lepe App" class="tl-fullshot-img" />
+      </div>
+    </section>
+
+    <!-- ─── CASE STUDY SCREENS ─── -->
+    <section class="tl-screens">
+      <div class="container">
+        <div class="tl-section-header">
+          <span class="tl-label">// Case Study</span>
+          <h2 class="tl-section-title">App Screens</h2>
+        </div>
+        <div class="tl-screens-list">
+
+          <div class="tl-screen-item">
+            <div class="tl-screen-text">
+              <span class="tl-screen-num">01</span>
+              <h3 class="tl-screen-title">Products Page</h3>
+              <p class="tl-screen-desc text-body">Browse a wide selection of products, organized by category for easier browsing.</p>
+            </div>
+            <div class="tl-screen-media">
+              <div class="tl-screen-wrap">
+                <video class="tl-screen-video" autoplay muted loop playsinline>
+                  <source src="videos/tri-lepe/products%20page.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-screen-item">
+            <div class="tl-screen-text">
+              <span class="tl-screen-num">02</span>
+              <h3 class="tl-screen-title">Single Product</h3>
+              <p class="tl-screen-desc text-body">Open the details of each product with a description, image and the ability to update the quantity.</p>
+            </div>
+            <div class="tl-screen-media">
+              <div class="tl-screen-wrap">
+                <video class="tl-screen-video" autoplay muted loop playsinline>
+                  <source src="videos/tri-lepe/sigle%20product%20page.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-screen-item">
+            <div class="tl-screen-text">
+              <span class="tl-screen-num">03</span>
+              <h3 class="tl-screen-title">Set Address</h3>
+              <p class="tl-screen-desc text-body">Select or enter a new address manually, or use the interactive map to pinpoint the location.</p>
+            </div>
+            <div class="tl-screen-media">
+              <div class="tl-screen-wrap">
+                <video class="tl-screen-video" autoplay muted loop playsinline>
+                  <source src="videos/tri-lepe/set%20address.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-screen-item">
+            <div class="tl-screen-text">
+              <span class="tl-screen-num">04</span>
+              <h3 class="tl-screen-title">Create Order</h3>
+              <p class="tl-screen-desc text-body">Confirm your order in just a few steps and enjoy fast and reliable delivery.</p>
+            </div>
+            <div class="tl-screen-media">
+              <div class="tl-screen-wrap">
+                <video class="tl-screen-video" autoplay muted loop playsinline>
+                  <source src="videos/tri-lepe/create-order.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+      <div class="container">
+        <div class="section-label">// Want to Collaborate</div>
+        <div class="footer-heading-wrapper" id="contact">
+          <a href="mailto:bojanb0794@gmail.com" class="footer-heading"
+            >Get in Touch</a
+          >
+          <a href="mailto:bojanb0794@gmail.com">
+            <svg
+              width="86"
+              height="86"
+              viewBox="0 0 86 86"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M81.6878 71.2706C80.6922 71.27 79.7375 70.8742 79.0335 70.1702C78.3294 69.4661 77.9336 68.5114 77.933 67.5158L77.9286 12.8271L6.41402 84.3417C5.70941 85.0463 4.75376 85.4421 3.75729 85.4421C2.76083 85.4421 1.80518 85.0463 1.10057 84.3417C0.395963 83.6371 0.000120037 82.6814 0.000120024 81.685C0.000120012 80.6885 0.395965 79.7329 1.10057 79.0282L72.6151 7.51369L17.9265 7.50926C16.9536 7.47492 16.032 7.06428 15.3558 6.36387C14.6797 5.66345 14.3019 4.72794 14.3019 3.75442C14.3019 2.78091 14.6797 1.8454 15.3558 1.14498C16.032 0.444564 16.9536 0.0339295 17.9265 -0.00041289L81.6878 -0.000410828C82.6835 0.000208743 83.6382 0.396004 84.3422 1.10004C85.0463 1.80407 85.4421 2.75877 85.4427 3.75443L85.4427 67.5158C85.4421 68.5114 85.0463 69.4661 84.3422 70.1702C83.6382 70.8742 82.6835 71.27 81.6878 71.2706Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:bojanb0794@gmail.com" class="footer-link">
+            Email
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+          <a href="#" class="footer-link">
+            Instagram
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+          <a href="#" class="footer-link">
+            Tiktok
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
+          <a href="#" class="footer-privacy">Privacy</a>
+          <span class="footer-copy"
+            >Copyright &copy; Bojan Bogdanović &mdash; 2026</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="tri-lepe.js"></script>
+  </body>
+</html>

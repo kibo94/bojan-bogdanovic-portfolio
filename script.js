@@ -8,6 +8,7 @@ const TRANSITION_COLORS = {
   "work.html": "var(--clr-bg)",     // leaving My Work
   "about.html": "var(--clr-bg)",     // leaving About
   "rtt.html": "var(--clr-dark)",   // leaving RTT project
+  "tri-lepe.html": "var(--clr-dark)", // leaving Tri Lepe project
 };
 
 const aboutSection = document.getElementById("about");
@@ -84,7 +85,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 }); // Trigger when 50% of section is visible
 
-observer.observe(aboutSection);
+if (aboutSection) observer.observe(aboutSection);
 
 
 // ── Main Init ──
@@ -172,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ── Project Image — bottom to top reveal ──
-  gsap.utils.toArray(".slide-media").forEach((media) => {
+  gsap.utils.toArray(".slide-media-inner").forEach((media) => {
     gsap.fromTo(media,
       { clipPath: "inset(100% 0 0% 0)" },
       {
@@ -189,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ── Work Video Hover ──
-  document.querySelectorAll(".slide-media").forEach((media) => {
+  document.querySelectorAll(".slide-media-inner").forEach((media) => {
     const video = media.querySelector(".slide-video");
     if (!video) return;
     media.addEventListener("mouseenter", () => video.play().catch(() => { }));
@@ -248,26 +249,26 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 0.85,
           ease: "expo.inOut",
           delay: 0.1,
-          onComplete: () => loaderEl.remove(),
-        });
-
-        gsap.to(".hero", {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: 0.35,
-        });
-
-        gsap.from(".hero-line", {
-          yPercent: 110,
-          duration: 1,
-          ease: "power4.out",
-          stagger: 0.14,
-          delay: 0,
           onComplete: () => {
-            document.querySelectorAll(".hero-line-wrap").forEach(el => {
-              el.style.overflow = "visible";
+            loaderEl.remove();
+
+            gsap.to(".hero", {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power3.out",
+            });
+
+            gsap.from(".hero-line", {
+              yPercent: 110,
+              duration: 1,
+              ease: "power4.out",
+              stagger: 0.14,
+              onComplete: () => {
+                document.querySelectorAll(".hero-line-wrap").forEach(el => {
+                  el.style.overflow = "visible";
+                });
+              },
             });
           },
         });

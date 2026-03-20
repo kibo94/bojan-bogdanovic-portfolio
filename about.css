@@ -84,8 +84,13 @@ footer {
   gap: 80px;
 }
 
+.about-indent {
+  padding-left: 40px;
+}
+
 .about-bio p,
 .photos-intro-text p {
+  text-align: left;
   font-size: 40px;
   line-height: 48px;
   letter-spacing: -3%;
@@ -215,6 +220,7 @@ footer {
     justify-content: stretch;
     width: 100%;
   }
+
   .about-hero-photo {
     width: clamp(100px, 28vw, 180px);
     height: clamp(100px, 28vw, 180px);
@@ -280,13 +286,13 @@ footer {
 
 @media (max-width: 600px) {
   .photos-intro-text p {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .about-bio p {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .about-bio {

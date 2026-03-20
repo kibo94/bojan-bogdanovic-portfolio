@@ -1,0 +1,467 @@
+/* ─── Sections always visible (no loader on this page) ─── */
+footer {
+  opacity: 1;
+}
+
+/* ─── Nav: white text over dark hero ─── */
+.tl-page #main-nav .nav-logo,
+.tl-page #main-nav .nav-links a {
+  color: var(--txt-white);
+}
+.tl-page #main-nav .nav-links a.contact {
+  background: var(--txt-white);
+  color: var(--clr-dark);
+}
+.tl-page #main-nav .nav-hamburger span {
+  background: var(--txt-white);
+}
+
+/* ════════════════════════════════════════
+   1. HERO
+════════════════════════════════════════ */
+.tl-hero {
+  background: var(--clr-dark);
+  color: var(--txt-white);
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+
+.tl-hero-title {
+  font-size: clamp(64px, 11vw, 180px);
+  letter-spacing: -0.03em;
+  color: var(--txt-white);
+  margin: 0 0 24px;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.tl-hero-sub {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 40px;
+}
+
+.tl-hero-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.tl-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tl-tab-label {
+  font-size: 28px;
+  color: var(--txt-white);
+}
+
+.tl-tab-value {
+  font-size: var(--fs-base);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ════════════════════════════════════════
+   2. OVERVIEW
+════════════════════════════════════════ */
+.tl-overview {
+  background: var(--clr-dark);
+  padding: 0 0 60px;
+}
+
+.tl-overview-inner {
+  max-width: 55%;
+}
+
+.tl-overview-text {
+  line-height: 1.7;
+  color: white;
+}
+
+/* ════════════════════════════════════════
+   3. FULL-WIDTH SCREENSHOT
+════════════════════════════════════════ */
+.tl-fullshot {
+  background: var(--clr-dark);
+  padding-bottom: 0;
+}
+
+.tl-fullshot-wrap {
+  overflow: hidden;
+}
+
+.tl-fullshot-img {
+  width: 70%;
+  display: block;
+  clip-path: inset(100% 0 0 0);
+  margin: 0 auto;
+}
+
+/* ════════════════════════════════════════
+   SHARED SECTION HEADER
+════════════════════════════════════════ */
+.tl-label {
+  display: block;
+  font-size: var(--fs-md);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 12px;
+}
+
+.tl-section-title {
+  font-size: clamp(36px, 4vw, 64px);
+  color: var(--txt-white);
+  margin: 0 0 56px;
+}
+
+/* ════════════════════════════════════════
+   4. CASE STUDY FEATURES
+════════════════════════════════════════ */
+.tl-features {
+  background: var(--clr-dark);
+  padding: 80px 0;
+}
+
+.tl-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tl-feature-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.tl-feature-item:nth-child(odd) {
+  padding-right: 48px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tl-feature-item:nth-child(even) {
+  padding-left: 48px;
+}
+
+.tl-feature-num {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  padding-top: 6px;
+}
+
+.tl-feature-title {
+  font-size: clamp(20px, 2.2vw, 30px);
+  color: var(--txt-white);
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.tl-feature-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+/* ════════════════════════════════════════
+   5. WHY TRI LEPE
+════════════════════════════════════════ */
+.tl-why {
+  background: var(--clr-dark);
+  padding: 0 0 80px;
+}
+
+.tl-why-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tl-why-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tl-why-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  flex-shrink: 0;
+}
+
+.tl-why-text {
+  font-family: "Antonio", sans-serif;
+  font-size: clamp(28px, 4vw, 60px);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--txt-white);
+  line-height: 1;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════
+   6. VIDEO SHOWCASE
+════════════════════════════════════════ */
+.tl-video-section {
+  background: var(--clr-dark);
+  padding: 0 0 80px;
+}
+
+.tl-video-wrap {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tl-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ════════════════════════════════════════
+   CASE STUDY SCREENS
+════════════════════════════════════════ */
+.tl-screens {
+  background: var(--clr-dark);
+  padding: 80px 0 120px;
+}
+
+.tl-screens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+.tl-screen-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.tl-screen-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+  justify-content: center;
+}
+
+.tl-screen-num {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.tl-screen-title {
+  font-size: clamp(28px, 3vw, 44px);
+  color: var(--txt-white);
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.tl-screen-desc {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  max-width: 420px;
+}
+
+.tl-screen-media {
+  display: flex;
+  justify-content: center;
+}
+
+.tl-screen-wrap {
+  width: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+  background: #111;
+}
+
+.tl-screen-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .tl-screen-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .tl-screen-wrap {
+    width: 220px;
+  }
+
+  .tl-screens-list {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tl-screen-item {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tl-screen-media {
+    justify-content: center;
+  }
+
+  .tl-screen-wrap {
+    width: 200px;
+  }
+
+  .tl-screens-list {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tl-screens {
+    padding: 60px 0 80px;
+  }
+
+  .tl-screens-list {
+    gap: 64px;
+  }
+
+  .tl-screen-wrap {
+    width: 160px;
+  }
+}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+.tl-page .footer {
+  padding-top: 100px;
+  background: var(--clr-bg);
+  color: var(--txt-black);
+  opacity: 1;
+}
+
+.tl-page .footer .section-label { color: var(--txt-black); }
+.tl-page .footer .footer-heading { color: var(--txt-black); }
+.tl-page .footer .footer-heading-wrapper svg { color: var(--txt-black); }
+.tl-page .footer .footer-link { color: var(--txt-black); }
+.tl-page .footer .footer-bottom { background: var(--clr-dark); }
+
+.tl-page .footer .footer-privacy,
+.tl-page .footer .footer-copy {
+  color: var(--txt-white);
+  background: transparent;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 768px
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .tl-hero {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .tl-overview-inner {
+    max-width: 100%;
+  }
+
+  .tl-fullshot-img {
+    width: 100%;
+  }
+
+  .tl-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tl-feature-item:nth-child(odd) {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .tl-feature-item:nth-child(even) {
+    padding-left: 0;
+  }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 480px
+════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .tl-hero {
+    padding-top: 76px;
+    padding-bottom: 52px;
+  }
+
+  .tl-hero-title {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .tl-hero-sub {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .tl-hero-tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .tl-tab-label {
+    font-size: 20px;
+  }
+
+  .tl-overview {
+    padding: 0 0 36px;
+  }
+
+  .tl-overview-text {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .tl-features {
+    padding: 60px 0;
+  }
+
+  .tl-section-title {
+    font-size: 32px;
+    margin-bottom: 36px;
+  }
+
+  .tl-feature-item {
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+
+  .tl-why-text {
+    font-size: clamp(22px, 6vw, 36px);
+  }
+
+  .tl-why-item {
+    gap: 16px;
+    padding: 22px 0;
+  }
+}
