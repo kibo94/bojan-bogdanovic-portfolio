@@ -13,12 +13,12 @@
   --txt-grey-inv: rgba(255, 255, 255, 0.8);
 
   /* Semantic text — 80% opacity for body copy */
-  --txt-on-light: rgba(0, 0, 0, 0.8);
+  --txt-on-light: rgba(0, 0, 0, 1);
   --txt-on-dark: rgba(255, 255, 255, 0.8);
 
   /* Border Radius */
-  --radius: 4px;
-  --radius-sm: 4px;
+  --radius: 0px;
+  --radius-sm: 0px;
 
   /* Type Scale */
   --fs-xs: 12px;
@@ -107,6 +107,7 @@ body {
 #type-text {
   font-size: 40px;
   letter-spacing: -3%;
+  color: black;
 }
 
 #pipe {
@@ -131,7 +132,7 @@ nav {
 
 .nav-logo {
   font-weight: 700;
-  font-size: var(--fs-sm);
+  font-size: 30px;
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.3s ease;

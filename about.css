@@ -217,6 +217,7 @@ footer {
   }
   .bio-right,
   .bio-left {
+    color: black;
     justify-content: stretch;
     width: 100%;
   }

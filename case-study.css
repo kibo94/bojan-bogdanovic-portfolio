@@ -1,0 +1,214 @@
+/* ─── Sections always visible (no loader on project pages) ─── */
+footer {
+  opacity: 1;
+}
+
+/* ─── Nav: white text over dark hero ─── */
+.cs-page #main-nav .nav-logo,
+.cs-page #main-nav .nav-links a {
+  color: var(--txt-white);
+}
+.cs-page #main-nav .nav-links a.contact {
+  background: var(--txt-white);
+  color: var(--clr-dark);
+}
+.cs-page #main-nav .nav-hamburger span {
+  background: var(--txt-white);
+}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.cs-hero {
+  background: var(--clr-dark);
+  color: var(--txt-white);
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+
+.cs-hero-title {
+  font-size: clamp(64px, 11vw, 180px);
+  letter-spacing: -0.03em;
+  color: var(--txt-white);
+  margin: 0 0 24px;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.cs-hero-sub {
+  color: var(--txt-on-dark);
+  margin: 0 0 40px;
+}
+
+.cs-hero-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.cs-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs-tab-label {
+  font-size: 28px;
+  color: var(--txt-white);
+}
+
+.cs-tab-value {
+  font-size: var(--fs-base);
+  color: var(--txt-on-dark);
+}
+
+/* ════════════════════════════════════════
+   OVERVIEW
+════════════════════════════════════════ */
+.cs-overview {
+  background: var(--clr-dark);
+  padding: 0 0 60px;
+}
+
+.cs-overview-inner {
+  max-width: 55%;
+}
+
+.cs-overview-text {
+  line-height: 1.7;
+  color: var(--txt-on-dark);
+}
+
+/* ════════════════════════════════════════
+   FULL-WIDTH SCREENSHOT
+════════════════════════════════════════ */
+.cs-fullshot {
+  background: var(--clr-dark);
+  padding-bottom: 0;
+}
+
+.cs-fullshot-wrap {
+  overflow: hidden;
+}
+
+.cs-fullshot-img {
+  display: block;
+  clip-path: inset(100% 0 0 0);
+  margin: 0 auto;
+}
+
+/* ════════════════════════════════════════
+   VIDEO SHOWCASE
+════════════════════════════════════════ */
+.cs-video-section {
+  background: var(--clr-dark);
+  padding: 0 0 80px;
+}
+
+.cs-video-wrap {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cs-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ════════════════════════════════════════
+   SHARED SECTION HEADER
+════════════════════════════════════════ */
+.cs-label {
+  display: block;
+  font-size: var(--fs-md);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 12px;
+}
+
+.cs-section-title {
+  font-size: clamp(36px, 4vw, 64px);
+  color: var(--txt-white);
+  margin: 0 0 56px;
+}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+.cs-page .footer {
+  padding-top: 100px;
+  background: var(--clr-bg);
+  color: var(--txt-black);
+  opacity: 1;
+}
+
+.cs-page .footer .section-label { color: var(--txt-black); }
+.cs-page .footer .footer-heading { color: var(--txt-black); }
+.cs-page .footer .footer-heading-wrapper svg { color: var(--txt-black); }
+.cs-page .footer .footer-link { color: var(--txt-black); }
+.cs-page .footer .footer-bottom { background: var(--clr-dark); }
+
+.cs-page .footer .footer-privacy,
+.cs-page .footer .footer-copy {
+  color: var(--txt-white);
+  background: transparent;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 768px
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .cs-hero {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .cs-overview-inner {
+    max-width: 100%;
+  }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 480px
+════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .cs-hero {
+    padding-top: 76px;
+    padding-bottom: 52px;
+  }
+
+  .cs-hero-title {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .cs-hero-sub {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .cs-hero-tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .cs-tab-label {
+    font-size: 20px;
+  }
+
+  .cs-overview {
+    padding: 0 0 36px;
+  }
+
+  .cs-overview-text {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .cs-section-title {
+    font-size: 32px;
+    margin-bottom: 36px;
+  }
+}

@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ── Full-width screenshot reveal ──
-  gsap.to(".tl-fullshot-img", {
+  gsap.to(".cs-fullshot-img", {
     clipPath: "inset(0% 0 0 0)",
     duration: 1.4,
     ease: "power3.inOut",
     scrollTrigger: {
-      trigger: ".tl-fullshot-wrap",
+      trigger: ".cs-fullshot-wrap",
       start: "top 82%",
       once: true,
     },
