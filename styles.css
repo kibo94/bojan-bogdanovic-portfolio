@@ -12,6 +12,10 @@
   --txt-grey: rgba(0, 0, 0, 0.45);
   --txt-grey-inv: rgba(255, 255, 255, 0.8);
 
+  /* Semantic text — 80% opacity for body copy */
+  --txt-on-light: rgba(0, 0, 0, 0.8);
+  --txt-on-dark: rgba(255, 255, 255, 0.8);
+
   /* Border Radius */
   --radius: 4px;
   --radius-sm: 4px;
@@ -47,7 +51,7 @@ p,
   font-size: var(--fs-base);
   font-weight: 400;
   line-height: 1.5;
-  color: var(--txt-black);
+  color: var(--txt-on-light);
   max-width: 65ch;
 }
 
@@ -108,7 +112,7 @@ body {
 #pipe {
   height: 25px;
   width: 2px;
-  background: black;
+  background: var(--clr-dark);
   display: inline-block;
 }
 
@@ -248,9 +252,9 @@ nav.scrolled .nav-links a.contact {
 
 .hero-heading {
   font-size: clamp(80px, 7.5vw, 175px);
-  line-height: 0.96;
+  line-height: 1;
   color: var(--txt-black);
-  letter-spacing: -0.02em;
+  letter-spacing: -5.5%;
   display: flex;
   flex-direction: column;
 }
@@ -343,7 +347,7 @@ nav.scrolled .nav-links a.contact {
 
 .slide-year {
   font-size: var(--fs-base);
-  color: var(--txt-grey-inv);
+  color: var(--txt-on-dark);
   margin-top: 4px;
 }
 
@@ -519,7 +523,7 @@ nav.scrolled .nav-links a.contact {
 
 .letter {
   display: inline;
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--txt-on-light);
 }
 
 .about-cta {
@@ -739,7 +743,7 @@ nav.scrolled .nav-links a.contact {
 }
 
 .t-role {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--txt-on-light);
   font-size: 16px;
   letter-spacing: -3%;
 }
