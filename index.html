@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <!-- Loading Screen -->
@@ -26,8 +26,8 @@
       <div class="container nav-content">
         <a href="index.html" class="nav-logo" id="nav-logo">Bojan Bogdanović</a>
         <ul class="nav-links" id="nav-links">
-          <li><a href="work.html">My Work</a></li>
-          <li><a href="about.html">About me</a></li>
+          <li><a href="pages/work.html">My Work</a></li>
+          <li><a href="pages/about.html">About me</a></li>
           <li>
             <a class="contact" href="https://calendly.com/bojanb0794/15min"
               >schedule a call</a
@@ -48,10 +48,10 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobile-menu">
-      <a href="work.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+      <a href="pages/work.html" class="mobile-menu-link" onclick="closeMobileMenu()"
         >My Work</a
       >
-      <a href="about.html" class="mobile-menu-link" onclick="closeMobileMenu()"
+      <a href="pages/about.html" class="mobile-menu-link" onclick="closeMobileMenu()"
         >About me</a
       >
       <a href="#contact" class="mobile-menu-link" onclick="closeMobileMenu()"
@@ -99,10 +99,10 @@
             <div class="work-item-info">
               <h2 class="slide-title">TRI LEPE APP</h2>
               <span class="slide-year">2025</span>
-              <a href="tri-lepe.html" class="slide-link">See Project</a>
+              <a href="pages/tri-lepe.html" class="slide-link">See Project</a>
             </div>
             <div class="slide-media">
-              <a href="tri-lepe.html" class="slide-media-inner">
+              <a href="pages/tri-lepe.html" class="slide-media-inner">
                 <img
                   src="./images/work/tri-lepe.webp"
                   alt="Tri Lepe App"
@@ -126,10 +126,10 @@
             <div class="work-item-info">
               <h2 class="slide-title">Real Time Traffic</h2>
               <span class="slide-year">2025</span>
-              <a href="rtt.html" class="slide-link">See Project</a>
+              <a href="pages/rtt.html" class="slide-link">See Project</a>
             </div>
             <div class="slide-media">
-              <a href="rtt.html" class="slide-media-inner">
+              <a href="pages/rtt.html" class="slide-media-inner">
                 <img
                   src="./images/work/rtt3.webp"
                   alt="Real Time Traffic Project"
@@ -150,7 +150,7 @@
         </div>
 
         <div class="work-footer">
-          <a href="work.html" class="btn btn-primary-dark">See More Work</a>
+          <a href="pages/work.html" class="btn btn-primary-dark">See More Work</a>
           <a href="mailto:bojanb0794@gmail.com" class="btn btn-primary-dark"
             >Contact Me</a
           >
@@ -172,7 +172,7 @@
             Serbia. I consider myself a hardworking and dedicated person.
           </p> -->
           <div class="about-cta">
-            <a href="about.html" class="btn btn-primary">More About Me</a>
+            <a href="pages/about.html" class="btn btn-primary">More About Me</a>
           </div>
         </div>
       </div>
@@ -317,17 +317,6 @@
         </div>
 
         <div class="footer-links">
-          <a href="mailto:bojanb0794@gmail.com" class="footer-link">
-            Email
-            <svg
-              viewBox="0 0 14 14"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path d="M2 12L12 2M12 2H5M12 2v7" />
-            </svg>
-          </a>
           <a href="#" class="footer-link">
             Instagram
             <svg
@@ -341,6 +330,17 @@
           </a>
           <a href="#" class="footer-link">
             Tiktok
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 12L12 2M12 2H5M12 2v7" />
+            </svg>
+          </a>
+          <a href="#" class="footer-link">
+            Github
             <svg
               viewBox="0 0 14 14"
               fill="none"
@@ -367,6 +367,6 @@
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

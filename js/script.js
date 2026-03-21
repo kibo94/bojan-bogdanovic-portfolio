@@ -62,15 +62,17 @@ const text = "Hello, I'm Bojan, a Frontend Developer.";
 // let count = 0;
 function typingAnimation() {
   let typeTextEl = document.getElementById("type-text");
+  let delay = 0;
   for (let i = 0; i < text.length; i++) {
+    delay += 40 + Math.random() * 30;
     setTimeout(() => {
       if (text.length > typeTextEl.textContent.length) {
         typeTextEl.textContent += text[i];
       }
       if (text.length == typeTextEl.textContent.length + 1) {
-        pipe.style.opacity = "0"
+        // pipe.style.opacity = "0"
       }
-    }, 80 * i);
+    }, delay);
   }
   pipe.style.opacity = pipe.style.opacity === "1" ? "0" : "1";
 }
