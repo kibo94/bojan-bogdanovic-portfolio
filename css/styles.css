@@ -1149,6 +1149,12 @@ nav.scrolled .nav-links a.contact {
     padding: 0;
     margin: 0;
   }
+  .slide-media {
+    height: 400px;
+  }
+  .slide-media-inner {
+    width: auto;
+  }
 
   .work-item {
     flex-direction: column;
