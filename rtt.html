@@ -6,22 +6,24 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Tri Lepe — Bojan Bogdanović</title>
+    <title>Real Time Traffic — Bojan Bogdanović</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/case-study.css" />
-    <link rel="stylesheet" href="../css/tri-lepe.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
+    <link rel="stylesheet" href="css/rtt.css" />
   </head>
-  <body class="tl-page cs-page">
+  <body class="rtt-page cs-page">
     <!-- ─── NAV ─── -->
     <nav id="main-nav">
       <div class="container nav-content">
-        <a href="../index.html" class="nav-logo" id="nav-logo">Bojan Bogdanović</a>
+        <a href="index.html" class="nav-logo" id="nav-logo"
+          >Bojan Bogdanović</a
+        >
         <ul class="nav-links" id="nav-links">
           <li><a href="work.html">My Work</a></li>
           <li><a href="about.html">About me</a></li>
@@ -49,7 +51,7 @@
         >About me</a
       >
       <a
-        href="../index.html#contact"
+        href="index.html#contact"
         class="mobile-menu-link"
         onclick="closeMobileMenu()"
         >Contact me</a
@@ -59,35 +61,37 @@
     <!-- ─── 1. HERO ─── -->
     <section class="cs-hero">
       <div class="container">
-        <h1 class="cs-hero-title" id="tl-title">Tri Lepe</h1>
+        <h1 class="cs-hero-title" id="rtt-title">Realtime Traffic</h1>
         <p class="cs-hero-sub text-body">
-          A delivery application for fast, reliable service — all in one place.
+          Company with leading road safety solutions platform.
         </p>
         <div class="cs-hero-tabs">
           <div class="cs-tab">
             <span class="cs-tab-label">Year</span>
-            <span class="cs-tab-value">2025</span>
+            <span class="cs-tab-value">2024</span>
           </div>
+          <span class="rtt-tab-sep"></span>
           <div class="cs-tab">
-            <span class="cs-tab-label">Designed by</span>
-            <span class="cs-tab-value">Bojan Bogdanović</span>
+            <span class="cs-tab-label">Credits for Design</span>
+            <span class="cs-tab-value">Boris Spasojević</span>
           </div>
+          <span class="rtt-tab-sep"></span>
           <div class="cs-tab">
-            <span class="cs-tab-label">Developed by</span>
-            <span class="cs-tab-value">Bojan Bogdanović</span>
+            <span class="cs-tab-label">Developed in</span>
+            <span class="cs-tab-value">Webflow</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── 2. OVERVIEW ─── -->
+    <!-- ─── 2. OVERVIEW TEXT ─── -->
     <section class="cs-overview">
       <div class="container">
         <div class="cs-overview-inner">
           <p class="cs-overview-text text-body">
-            Our delivery application allows you to easily and quickly order your
-            favorite products, track your orders in real time and enjoy fast and
-            reliable service — all in one place.
+            The website needed a full rebuild to reflect their updated business
+            model. They shifted from supplying improved traffic surveys to a
+            leading road safety solutions platform.
           </p>
         </div>
       </div>
@@ -97,103 +101,79 @@
     <section class="cs-fullshot container">
       <div class="cs-fullshot-wrap">
         <img
-          src="../images/work/tri-lepe.webp"
-          alt="Tri Lepe App"
-          class="cs-fullshot-img tl-fullshot-img"
+          src="images/work/realtimetraffic/rtt-image1.png"
+          alt="Real Time Traffic — Predict. Prevent. Protect."
+          class="cs-fullshot-img rtt-fullshot-img"
         />
       </div>
     </section>
 
-    <!-- ─── CASE STUDY SCREENS ─── -->
-    <section class="tl-screens">
+    <!-- ─── 4. OLD vs NEW ─── -->
+    <section class="rtt-compare">
       <div class="container">
-        <div class="cs-section-header">
-          <span class="cs-label">// Case Study</span>
-          <h2 class="cs-section-title">App flow</h2>
+        <div class="rtt-compare-grid">
+          <!-- OLD -->
+          <div class="rtt-compare-col">
+            <h2 class="rtt-compare-heading">Old Website</h2>
+            <p class="rtt-compare-text text-body">
+              The old website was outdated, slow, non-responsive and difficult
+              to navigate on phone. Could not easily communicate the company's
+              promise on preventing road safety accidents.
+            </p>
+          </div>
+
+          <!-- NEW -->
+          <div class="rtt-compare-col">
+            <h2 class="rtt-compare-heading">New Website</h2>
+            <p class="rtt-compare-text text-body">
+              The new website delivers a modern, responsive design with improved
+              performance and clearer messaging around their AI-enabled systems.
+              Better supports engagement with government enterprise clients and
+              is much easier for our team to manage.
+            </p>
+          </div>
         </div>
-        <div class="tl-screens-list">
-          <div class="tl-screen-item">
-            <div class="tl-screen-text">
-              <span class="tl-screen-num">01</span>
-              <h3 class="tl-screen-title">Products Page</h3>
-              <p class="tl-screen-desc text-body">
-                Browse a wide selection of products, organized by category for
-                easier browsing.
-              </p>
-            </div>
-            <div class="tl-screen-media">
-              <div class="tl-phone-frame">
-                <video class="tl-screen-video" autoplay muted loop playsinline>
-                  <source
-                    src="../videos/tri-lepe/products%20page.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </div>
-          </div>
 
-          <div class="tl-screen-item">
-            <div class="tl-screen-text">
-              <span class="tl-screen-num">02</span>
-              <h3 class="tl-screen-title">Single Product</h3>
-              <p class="tl-screen-desc text-body">
-                Open the details of each product with a description, image and
-                the ability to update the quantity.
-              </p>
-            </div>
-            <div class="tl-screen-media">
-              <div class="tl-phone-frame">
-                <video class="tl-screen-video" autoplay muted loop playsinline>
-                  <source
-                    src="../videos/tri-lepe/sigle%20product%20page.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </div>
+        <!-- ─── 3 IMAGES BELOW ─── -->
+        <div class="rtt-gallery-grid">
+          <div class="rtt-gallery-item" id="rtt-gal-1">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/work/realtimetraffic/mobile/image1.png"
+              />
+              <img
+                src="images/work/realtimetraffic/rtt-image-2.png"
+                alt="RTT old website"
+                class="rtt-gallery-img"
+              />
+            </picture>
           </div>
-
-          <div class="tl-screen-item">
-            <div class="tl-screen-text">
-              <span class="tl-screen-num">03</span>
-              <h3 class="tl-screen-title">Set Address</h3>
-              <p class="tl-screen-desc text-body">
-                Select or enter a new address manually, or use the interactive
-                map to pinpoint the location.
-              </p>
-            </div>
-            <div class="tl-screen-media">
-              <div class="tl-phone-frame">
-                <video class="tl-screen-video" autoplay muted loop playsinline>
-                  <source
-                    src="../videos/tri-lepe/set%20address.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </div>
+          <div class="rtt-gallery-item" id="rtt-gal-2">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/work/realtimetraffic/mobile/image2.png"
+              />
+              <img
+                src="images/work/realtimetraffic/rtt-mobile-2.png"
+                alt="RTT new website"
+                class="rtt-gallery-img"
+              />
+            </picture>
           </div>
-
-          <div class="tl-screen-item">
-            <div class="tl-screen-text">
-              <span class="tl-screen-num">04</span>
-              <h3 class="tl-screen-title">Create Order</h3>
-              <p class="tl-screen-desc text-body">
-                Confirm your order in just a few steps and enjoy fast and
-                reliable delivery.
-              </p>
-            </div>
-            <div class="tl-screen-media">
-              <div class="tl-phone-frame">
-                <video class="tl-screen-video" autoplay muted loop playsinline>
-                  <source
-                    src="../videos/tri-lepe/create-order.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </div>
+          <div class="rtt-gallery-item" id="rtt-gal-3">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/work/realtimetraffic/mobile/image3.png"
+              />
+              <img
+                src="images/work/realtimetraffic/rtt-mobile-1.png"
+                alt="RTT mobile view"
+                class="rtt-gallery-img"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -271,7 +251,8 @@
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/tri-lepe.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/rtt.js"></script>
   </body>
 </html>
