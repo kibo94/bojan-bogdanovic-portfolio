@@ -70,7 +70,18 @@
     <link rel="preload" as="image" href="./images/me.avif" type="image/avif" />
     <link rel="preload" as="image" href="./images/me.webp" type="image/webp" />
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Critical CSS: loader only — covers full viewport so nothing else is visible -->
+    <style>
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      html,body{width:100%;background:#ffffff}
+      #loader{position:fixed;top:0;left:0;right:0;bottom:0;background:#000000;z-index:9999;display:flex;align-items:flex-end;padding:40px;overflow:hidden}
+      .loader-bar{position:absolute;top:0;left:0;height:2px;width:0%;background:#ffffff}
+      .loader-count{font-family:"Antonio",sans-serif;font-weight:700;font-size:clamp(80px,20vw,200px);line-height:1;color:#ffffff;letter-spacing:-0.04em;-webkit-user-select:none;user-select:none}
+    </style>
+
+    <!-- Non-blocking full stylesheet (loader covers page while it loads) -->
+    <link rel="preload" as="style" href="css/styles.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
     <link rel="icon" type="image/png" href="./favicon.png" />
   </head>
   <body>
