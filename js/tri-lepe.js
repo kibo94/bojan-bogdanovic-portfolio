@@ -54,6 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ── Lazy autoplay: phone demo videos play only when visible ──
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".tl-screen-video").forEach(video => {
+    videoObserver.observe(video);
+  });
+
   // ── Why items stagger reveal ──
   gsap.utils.toArray(".tl-why-item").forEach((item, i) => {
     gsap.to(item, {

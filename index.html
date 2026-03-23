@@ -116,13 +116,17 @@
           </p>
         </div>
         <div class="hero-v2-right">
-          <img
-            src="./images/me.png"
-            alt="Bojan Bogdanović"
-            class="hero-v2-img"
-            fetchpriority="high"
-            decoding="async"
-          />
+          <picture>
+            <source srcset="./images/me.avif" type="image/avif" />
+            <source srcset="./images/me.webp" type="image/webp" />
+            <img
+              src="./images/me.png"
+              alt="Bojan Bogdanović"
+              class="hero-v2-img"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -153,9 +157,9 @@
                   muted
                   loop
                   playsinline
-                  preload="metadata"
+                  preload="none"
                 >
-                  <source src="./tri-lepe.mp4" type="video/mp4" />
+                  <source src="./tri-lepe.webm" type="video/mp4" />
                 </video>
               </a>
             </div>
@@ -182,9 +186,9 @@
                   muted
                   loop
                   playsinline
-                  preload="metadata"
+                  preload="none"
                 >
-                  <source src="rtt.mp4" type="video/mp4" />
+                  <source src="rtt.webm" type="video/mp4" />
                 </video>
               </a>
             </div>
