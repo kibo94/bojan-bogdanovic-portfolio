@@ -231,11 +231,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const loaderNumEl = document.getElementById("loader-num");
     const loaderBarEl = document.querySelector(".loader-bar");
 
-    gsap.set(".hero", { opacity: 0, y: 40 });
+    gsap.set(".hero-v2-left", { opacity: 0, y: 40 });
 
     gsap.to({ val: 0 }, {
       val: 100,
-      duration: 1.4,
+      duration: 0.7,
       ease: "power2.out",
       onUpdate: function () {
         const v = Math.floor(this.targets()[0].val);
@@ -248,13 +248,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         gsap.to(loaderEl, {
           yPercent: -100,
-          duration: 0.85,
+          duration: 0.6,
           ease: "expo.inOut",
-          delay: 0.1,
+          delay: 0.05,
           onComplete: () => {
             loaderEl.remove();
 
-            gsap.to(".hero", {
+            gsap.set(".hero", { opacity: 1 });
+
+            gsap.to(".hero-v2-left", {
               opacity: 1,
               y: 0,
               duration: 0.8,
