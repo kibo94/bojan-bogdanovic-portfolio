@@ -151,8 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ── Lenis smooth scroll ──
-  if (window.Lenis) {
+  // ── Lenis smooth scroll (desktop only) ──
+  if (window.Lenis && window.matchMedia("(min-width: 1025px)").matches) {
     const lenis = new window.Lenis({ lerp: 0.08, smoothWheel: true });
     lenis.on("scroll", () => ScrollTrigger.update());
     gsap.ticker.add((time) => lenis.raf(time * 1000));

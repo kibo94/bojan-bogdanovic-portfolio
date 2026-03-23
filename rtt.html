@@ -100,11 +100,17 @@
     <!-- ─── 3. FULL-WIDTH SCREENSHOT ─── -->
     <section class="cs-fullshot container">
       <div class="cs-fullshot-wrap">
-        <img
-          src="images/work/realtimetraffic/rtt-image1.png"
-          alt="Real Time Traffic — Predict. Prevent. Protect."
-          class="cs-fullshot-img rtt-fullshot-img"
-        />
+        <picture>
+          <source srcset="images/work/realtimetraffic/rtt-image1.avif" type="image/avif" />
+          <source srcset="images/work/realtimetraffic/rtt-image1.webp" type="image/webp" />
+          <img
+            src="images/work/realtimetraffic/rtt-image1.png"
+            alt="Real Time Traffic — Predict. Prevent. Protect."
+            class="cs-fullshot-img rtt-fullshot-img"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
     </section>
 
@@ -142,10 +148,14 @@
                 media="(max-width: 768px)"
                 srcset="images/work/realtimetraffic/mobile/image1.png"
               />
+              <source srcset="images/work/realtimetraffic/rtt-image-2.avif" type="image/avif" />
+              <source srcset="images/work/realtimetraffic/rtt-image-2.webp" type="image/webp" />
               <img
                 src="images/work/realtimetraffic/rtt-image-2.png"
                 alt="RTT old website"
                 class="rtt-gallery-img"
+                loading="lazy"
+                decoding="async"
               />
             </picture>
           </div>
@@ -155,10 +165,14 @@
                 media="(max-width: 768px)"
                 srcset="images/work/realtimetraffic/mobile/image2.png"
               />
+              <source srcset="images/work/realtimetraffic/rtt-mobile-2.avif" type="image/avif" />
+              <source srcset="images/work/realtimetraffic/rtt-mobile-2.webp" type="image/webp" />
               <img
                 src="images/work/realtimetraffic/rtt-mobile-2.png"
                 alt="RTT new website"
                 class="rtt-gallery-img"
+                loading="lazy"
+                decoding="async"
               />
             </picture>
           </div>
@@ -168,10 +182,13 @@
                 media="(max-width: 768px)"
                 srcset="images/work/realtimetraffic/mobile/image3.png"
               />
+              <source srcset="images/work/realtimetraffic/rtt-mobile-1.webp" type="image/webp" />
               <img
                 src="images/work/realtimetraffic/rtt-mobile-1.png"
                 alt="RTT mobile view"
                 class="rtt-gallery-img"
+                loading="lazy"
+                decoding="async"
               />
             </picture>
           </div>

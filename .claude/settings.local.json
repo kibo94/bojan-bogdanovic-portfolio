@@ -4,7 +4,10 @@
       "Bash(node -e \":*)",
       "Bash(mkdir -p pages)",
       "Bash(cp about.html work.html rtt.html tri-lepe.html pages/)",
-      "Bash(rm about.html work.html rtt.html tri-lepe.html)"
+      "Bash(rm about.html work.html rtt.html tri-lepe.html)",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Path images | Where-Object {!$_PSIsContainer} | Select-Object Name, @{N=''Size_KB'';E={[math]::Round\\($_Length/1KB,1\\)}}, @{N=''Size_MB'';E={[math]::Round\\($_Length/1MB,2\\)}}, Extension | Sort-Object Length -Descending | Format-Table -AutoSize\")",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Path ''c:\\\\Users\\\\Bojan Adera\\\\Desktop\\\\test portfolio claude\\\\images'' | Where-Object {-not $_PSIsContainer} | Select-Object Name, Extension, @{N=''KB'';E={[math]::Round\\($_Length/1KB,1\\)}} | Sort-Object {$_KB} -Descending | Format-Table -AutoSize\")",
+      "Bash(grep -v \"^$\")"
     ]
   }
 }
